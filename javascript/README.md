@@ -303,25 +303,23 @@ Any number of arguments will be converted into an array using the rest parameter
 
 **25. What is spread operator `(...)` in javascript?**
 
-	The spread operator is used to spreading an array, and object literals. We also use spread operators 	where one or more arguments are expected in a function call.
+The spread operator is used to spreading an array, and object literals. We also use spread operators 	where one or more arguments are expected in a function call.
 	
-	Example:
+**Example:**
 	
-	```
 	let array1 = [3, 4, 5, 6];
 	
 	// Spreads the array into 3,4,5,6
 	let clonedArray1 = [...array1];
 	
 	console.log(clonedArray1); // Outputs [3,4,5,6]
-	```
+
 **26. What is temporal dead zone?**
 
 Temporal Dead Zone is a behaviour that occurs with variables declared using let and const keywords. It 	is a behaviour where we try to access a variable before it is initialized.
 	
-	**Example:**
-	
-	```
+**Example:**
+
 	x = 23; // Gives reference error
 
 	let x;
