@@ -6,7 +6,7 @@ JavaScript is a scripting language that enables you to create dynamically updati
 
 1. What is the difference between `==` and `===` in javscript?
 
-	The main difference between the `==` and `===` operator in javascript is that the == operator does the 	type 	conversion of the operands before comparison, whereas the === operator compares the values as well 	as the data types of the operands.
+	The main difference between the `==` and `===` operator in javascript is that the `==` operator does the 	type 	conversion of the operands before comparison, whereas the `===` operator compares the values as well 	as the data types of the operands.
 	
 2. Which one is faster between `==` and `===` in javascript?
 
@@ -124,9 +124,9 @@ JavaScript is a scripting language that enables you to create dynamically updati
 	```
 27. How to destructure in javascript?
 	
-	 Object destructuring is a new way to extract elements from an object or an array.
+	Object destructuring is a new way to extract elements from an object or an array.
 	 
-	 - Object destructuring: Before ES6 version:
+	- Object destructuring: Before ES6 version:
 	 
 	 	```
 		const classDetails = {
@@ -139,7 +139,7 @@ JavaScript is a scripting language that enables you to create dynamically updati
 		const classBenches = classDetails.benches;
 		const classBlackBoard = classDetails.blackBoard;
 		```
-	 -	Using object destructuring
+	-	Using object destructuring
 	 	
 	 	```
 	 	const classDetails = {
@@ -155,6 +155,51 @@ JavaScript is a scripting language that enables you to create dynamically updati
 	 	``` 
 28. Is javascript `pass-by-value` or `pass-by-reference`?
 	 
-	 JavaScript is always pass-by-value. This means everything in JavaScript is a value type and function 	 arguments are always passed by value. That being said, object types are a bit more confusing. 
-	 The confusion lies in the fact that object types are reference types which are passed by value.
+	JavaScript is always pass-by-value. This means everything in JavaScript is a value type and function 	 arguments are always passed by value. That being said, object types are a bit more confusing. 
+	The confusion lies in the fact that object types are reference types which are passed by value.
+
+29. Explain javascript Array prototype constructor?
+
+    The JavaScript array prototype constructor is used to allow to add new methods and properties to the Array() object. If the method is constructed, then it will available for every array. When constructing a property, all arrays will be given the property, and its value, as default.
 	 
+    Syntax:
+        Array.prototype.name = value
+
+    Example 1: This example use JavaScript array prototype constructor and convert string character into upper case character. 
+
+    ```
+        Array.prototype.upperCase = function() {
+            var i;
+            for (i = 0; i < this.length; i++) {
+                this[i] = this[i].toUpperCase();
+            }
+        };
+         
+        function myGeeks() {
+            var sub = ["Algorithm", "Data Structure",
+                            "Operating System", "html"];
+            sub.upperCase();
+             
+            document.getElementById("GFG").innerHTML= sub;
+        }
+    ```
+
+    Example 2: This example use JavaScript array prototype constructor to count string length. 
+
+    ```
+        Array.prototype.stringLength = function() {
+            var i;
+            for (i = 0; i < this.length; i++) {
+                this[i] = this[i].length;
+            }
+        };
+         
+        function lengthFunction() {
+             
+            // Declare an array
+            var str = ["GeeksforGeeks", "GFG", "myGeeks"];
+             
+            str.stringLength();
+            document.getElementById("GFG").innerHTML = str;
+        }
+    ```
