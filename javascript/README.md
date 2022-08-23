@@ -378,48 +378,101 @@ The JavaScript array prototype constructor is used to allow to add new methods a
 
 **Example 1**: This example use JavaScript array prototype constructor and convert string character into upper case character. 
 
-        Array.prototype.upperCase = function() {
-            var i;
-            for (i = 0; i < this.length; i++) {
-                this[i] = this[i].toUpperCase();
-            }
-        };
+     Array.prototype.upperCase = function() {
+         var i;
+         for (i = 0; i < this.length; i++) {
+             this[i] = this[i].toUpperCase();
+         }
+     };
          
-        function myGeeks() {
-            var sub = ["Algorithm", "Data Structure",
-                            "Operating System", "html"];
-            sub.upperCase();
+     function myGeeks() {
+         var sub = ["Algorithm", "Data Structure",
+                         "Operating System", "html"];
+         sub.upperCase();
              
-            document.getElementById("GFG").innerHTML= sub;
-        }
+         document.getElementById("GFG").innerHTML= sub;
+     }
 
 **Example 2:** This example use JavaScript array prototype constructor to count string length. 
 
-        Array.prototype.stringLength = function() {
-            var i;
-            for (i = 0; i < this.length; i++) {
-                this[i] = this[i].length;
-            }
-        };
-         
-        function lengthFunction() {
-             
-            // Declare an array
-            var str = ["GeeksforGeeks", "GFG", "myGeeks"];
-             
-            str.stringLength();
-            document.getElementById("GFG").innerHTML = str;
+    Array.prototype.stringLength = function() {
+        var i;
+        for (i = 0; i < this.length; i++) {
+            this[i] = this[i].length;
         }
+    };
+         
+    function lengthFunction() {            
+        // Declare an array
+        var str = ["GeeksforGeeks", "GFG", "myGeeks"];
+             
+        str.stringLength();
+        document.getElementById("GFG").innerHTML = str;
+    }
+     
 **30. How to create a matrix in javascript?<br/>**
 
 Using the fill property we can create a matrix in javascript.
 	
-			function array9() { 
-				return Array(9).fill(); 
-			}
-			const arr = array9().map(array9);
+	function array9() { 
+		return Array(9).fill(); 
+	}
+	const arr = array9().map(array9);
 			
-			console.log('Arr: ', arr);	// Would print a matrix with undefined values
+	console.log('Arr: ', arr);	// Would print a matrix with undefined values
 			
-			arr[1][2] = 4444;	// would fill 4444 to arr[1] position 2.
+	arr[1][2] = 4444;	// would fill 4444 to arr[1] position 2.
 	
+**31. Explain various methods on Arrays in javascript?<br/>**
+
+An array is a special variable, which can hold more than one value:
+
+**Example:<br/>**
+
+		const cars = ["Saab", "Volvo", "BMW"];
+	
+**Creating array:<br/>**
+	
+		const cars = []; 	// One way
+		cars[0]= "Saab";
+		cars[1]= "Volvo";
+		cars[2]= "BMW";	
+		
+		const cars = new Array("Saab", "Volvo", "BMW"); // Another way
+		
+		const cars = ["Saab", "Volvo", "BMW"];  // Third way		
+**Different methods on array:**
+
+**1. toString():**
+The JavaScript method toString() converts an array to a string of (comma separated) array values.
+
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.toString();
+	console.log("Fruits: ", fruits);
+	
+**Result:**
+		Banana,Orange,Apple,Mango
+		
+**2. join():**
+The join() method also joins all array elements into a string.
+
+**Example:**
+
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.join(',');
+	console.log("Fruits: ", fruits);
+	
+**Result:**
+		Banana,Orange,Apple,Mango
+		
+**3. push():**
+The push() method adds a new element to an array (at the end):
+
+**Example:**
+
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.push("Kiwi");
+	console.log("Fruits: ", fruits);
+	
+**Result:**
+		Banana,Orange,Apple,Mango,Kiwi
