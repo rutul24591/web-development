@@ -476,3 +476,68 @@ The push() method adds a new element to an array (at the end):
 	
 **Result:**
 		Banana,Orange,Apple,Mango,Kiwi
+		
+**4. pop():**
+The pop() method removes the last element from an array:
+
+**Example:**
+
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.pop();
+	console.log("Fruits: ", fruits);
+	
+**Result:**
+		Banana,Orange,Apple
+		
+**5. shift():**
+The shift() method removes the first array element and "shifts" all other elements to a lower index.
+
+**Example:**
+
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.shift();
+	console.log("Fruits: ", fruits);
+	
+**Result:**
+		Orange,Apple,Mango
+		
+**6. unshift():**
+The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements
+
+**Example:**
+
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	fruits.unshift("Lemon");
+	console.log("Fruits: ", fruits);
+	
+**Result:**
+		Lemon,Banana,Orange,Apple,Mango
+		
+**7. length():**
+The length property provides an easy way to length of an array:
+
+**Example:**
+
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	let arrayLength = fruits.length;
+	console.log("arrayLength: ", arrayLength);
+	
+**Result:**
+		4
+		
+**8. delete():**
+
+Array elements can be deleted using the JavaScript operator `delete`.
+
+Using delete leaves `undefined` holes in the array.
+
+Use **pop() or shift() instead**.
+
+**Example:**
+
+	const fruits = ["Banana", "Orange", "Apple", "Mango"];
+	delete fruits[0];
+	console.log("Fruits: ", fruits);
+	
+**Result:**
+		,Orange,Apple,Mango
