@@ -250,6 +250,49 @@ When a function is passed as an argument, it is called a **callback function**. 
 
 **12. What are function generators in javascript?**
 
+**Generator-Function :** A generator-function is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. The yield statement suspends function’s execution and sends a value back to caller, but retains enough state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. 
+
+**Syntax :**
+	
+	// An example of generator function
+	function* gen(){
+	     yield 1;
+	     yield 2;
+	     ...
+	     ...
+	}
+	
+**Generator-Object :** Generator functions return a generator object. Generator objects are used either by calling the next method on the generator object or using the generator object in a “for of” loop (as shown in the above program) 
+The Generator object is returned by a generating function and it conforms to both the iterable protocol and the iterator protocol.
+
+**Example: **
+
+	// Generate Function generates three different numbers
+	function * fun(){
+	    yield 10;
+	    yield 20;
+	    yield 30;   
+	}
+	 
+	// Calling the Generate Function
+	
+	var gen = fun();
+	gen.next().value;
+	gen.next().value;
+	gen.next().value;
+	
+					OR
+	//Using for loop to generate value
+	
+	for (var i = 0; i < 10; i++) {
+ 
+	    // Generating Next Number
+	    gen.next().value;
+	 
+	    // New Line
+	    document.write("<br>");
+	}
+
 **13. What is the difference between `call`, `bind` and `apply` in javascript?**
 
 **14. What are closures in javascript?**
