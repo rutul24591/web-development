@@ -1,7 +1,7 @@
 /**
  *      Brute Force Approach
- *      Time Complexity: O(n^2)
- *      Space Complexity: O(1)
+ *      Time Complexity: O(n^2) (due to the nested loop.)
+ *      Space Complexity: O(1) (since no extra storage is used apart from the input.)
  */
 
 function twoSum(nums, target) {
@@ -17,8 +17,8 @@ function twoSum(nums, target) {
 
 /**
  *      Optimal Approach(Hashing or HashMap)
- *      Time Complexity: O(n)
- *      Space Complexity: O(n)
+ *      Time Complexity: O(n) (Iterate through the array once)
+ *      Space Complexity: O(n) (Store elements in the map)
  */
 
 function twoSumOptimal(nums, target) {
@@ -35,3 +35,7 @@ function twoSumOptimal(nums, target) {
     }
     return [];
 }
+
+// Example
+console.log(twoSum([2, 7, 11, 15], 9)); // Output: [0, 1]
+console.log(twoSumOptimal([2, 7, 11, 15], 9)); // Output: [0, 1]
