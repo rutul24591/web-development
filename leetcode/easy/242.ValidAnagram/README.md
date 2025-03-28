@@ -34,7 +34,7 @@ console.log(isAnagram("rat", "car"));         // false
 ```
 
 ### **Time & Space Complexity**
-- **Time Complexity:** \(O(n \log n)\) (Due to sorting)
+- **Time Complexity:** \(O(n log n)\) (Due to sorting)
 - **Space Complexity:** \(O(n)\) (Because sorting creates a new array)
 
 ---

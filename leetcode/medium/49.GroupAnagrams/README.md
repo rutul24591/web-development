@@ -112,7 +112,4 @@ function groupAnagrams(words) {
 
 Both approaches have the same space complexity, but the **frequency-based hashing approach is more efficient for long words** because it eliminates sorting.
 
-## License
-
-This project is released under the MIT License.
 

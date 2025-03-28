@@ -55,7 +55,8 @@ function isAnagramOptimal2(s, t) {
         freq[t.charCodeAt(i) - 'a'.charCodeAt(0)]--;
     }
 
-    return freq.every(count => count === 0);
+    return freq.prototype.every(count => count === 0);
+    // return freq.every(count => count === 0);
 }
 
 // Test cases
