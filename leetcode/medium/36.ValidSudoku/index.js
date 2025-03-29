@@ -33,7 +33,7 @@ function isValidSudoku(board) {
  *      Space Complexity: O(n) (If input stays same then we can say O(1))
  *      Idea: Use three sets to track rows, columns, and boxes.
  */
-function isValidSudoku(board) {
+function isValidSudokuOptimal(board) {
     let rows = Array.from({ length: 9 }, () => new Set());
     let cols = Array.from({ length: 9 }, () => new Set());
     let boxes = Array.from({ length: 9 }, () => new Set());
@@ -62,7 +62,7 @@ function isValidSudoku(board) {
  *      Space Complexity: O(n) (If input stays same then we can say O(1))
  *      Idea: Use bit masking to track rows, columns, and boxes.
  */
-function isValidSudoku(board) {
+function isValidSudokuOptimal2(board) {
     let rows = new Array(9).fill(0);
     let cols = new Array(9).fill(0);
     let boxes = new Array(9).fill(0);
@@ -87,3 +87,8 @@ function isValidSudoku(board) {
     }
     return true;
 }
+
+// Example
+console.log(isValidSudoku([["5", "3", ".", ".", "7", ".", ".", ".", "."], ["6", ".", ".", "1", "9", "5", ".", ".", "."], [".", "9", "8", ".", ".", ".", ".", "6", "."], ["8", ".", ".", ".", "6", ".", ".", ".", "3"], ["4", ".", ".", "8", ".", "3", ".", ".", "1"], ["7", ".", ".", ".", "2", ".", ".", ".", "6"], [".", "6", ".", ".", ".", ".", "2", "8", "."], [".", ".", ".", "4", "1", "9", ".", ".", "5"], [".", ".", ".", ".", "8", ".", ".", "7", "9"]])); // Output: true
+console.log(isValidSudokuOptimal([["5", "3", ".", ".", "7", ".", ".", ".", "."], ["6", ".", ".", "1", "9", "5", ".", ".", "."], [".", "9", "8", ".", ".", ".", ".", "6", "."], ["8", ".", ".", ".", "6", ".", ".", ".", "3"], ["4", ".", ".", "8", ".", "3", ".", ".", "1"], ["7", ".", ".", ".", "2", ".", ".", ".", "6"], [".", "6", ".", ".", ".", ".", "2", "8", "."], [".", ".", ".", "4", "1", "9", ".", ".", "5"], [".", ".", ".", ".", "8", ".", ".", "7", "9"]])); // Output: true
+console.log(isValidSudokuOptimal2([["5", "3", ".", ".", "7", ".", ".", ".", "."], ["6", ".", ".", "1", "9", "5", ".", ".", "."], [".", "9", "8", ".", ".", ".", ".", "6", "."], ["8", ".", ".", ".", "6", ".", ".", ".", "3"], ["4", ".", ".", "8", ".", "3", ".", ".", "1"], ["7", ".", ".", ".", "2", ".", ".", ".", "6"], [".", "6", ".", ".", ".", ".", "2", "8", "."], [".", ".", ".", "4", "1", "9", ".", ".", "5"], [".", ".", ".", ".", "8", ".", ".", "7", "9"]])); // Output: true
