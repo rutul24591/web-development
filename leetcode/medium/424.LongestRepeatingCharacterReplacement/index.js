@@ -38,24 +38,30 @@ function characterReplacementBrute(s, k) {
  */
 function characterReplacementOptimal(s, k) {
     let left = 0;
-    let maxCount = 0;
-    let count = new Array(26).fill(0);
-    let maxLen = 0;
+    let maxCount = 0; // Max count of the character
+    let count = new Array(26).fill(0); // Array to store the count of each character
+    let maxLen = 0; // Max length of the substring
   
+    // Iterate through the string
     for (let right = 0; right < s.length; right++) {
-      let index = s[right].charCodeAt(0) - 'A'.charCodeAt(0);
-      count[index]++;
-      maxCount = Math.max(maxCount, count[index]);
+        // Get the index of the character in the count array
+        let index = s[right].charCodeAt(0) - 'A'.charCodeAt(0);
+        count[index]++;
+
+        // Update the max count of the character
+        maxCount = Math.max(maxCount, count[index]);
   
-      let windowSize = right - left + 1;
+        // Get the size of the window
+        let windowSize = right - left + 1;
   
-      // If more than k characters need replacement, shrink window
-      if (windowSize - maxCount > k) {
-        count[s[left].charCodeAt(0) - 'A'.charCodeAt(0)]--;
-        left++;
-      }
+        // If more than k characters need replacement, shrink window
+        if (windowSize - maxCount > k) {
+            count[s[left].charCodeAt(0) - 'A'.charCodeAt(0)]--; // - 65
+            left++;
+        }
   
-      maxLen = Math.max(maxLen, right - left + 1);
+        // Update the max length of the substring
+        maxLen = Math.max(maxLen, right - left + 1);
     }
   
     return maxLen;
