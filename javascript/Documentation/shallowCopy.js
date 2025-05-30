@@ -4,6 +4,13 @@
  * while nested objects or arrays still reference the original memory location. 
  * This means that if you change the nested properties in one object, 
  * those changes will reflect in the other because they share the same memory reference. 
+ * 
+ * 
+ * 
+ * Key takeaways:
+
+ * Top-level properties (a, b, x, y, num, id) are truly copied—mutating them in the copy doesn’t affect the original.
+ * Nested objects (nested, settings) are only copied by reference—mutating them in the copy also mutates the original.
  *
 */
 
