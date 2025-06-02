@@ -1,4 +1,4 @@
-# 120 NodeJS Interview Questions and Answers
+# 81 NodeJS Interview Questions and Answers
 
 ## 1. What is Node.js?
 **Answer:** Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine that allows executing JavaScript code outside a web browser. It uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
