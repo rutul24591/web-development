@@ -3,6 +3,12 @@
 //                                           |
 //                                       true / false
 
+
+// Bubbling and capturing are the 2 ways to for event propogation in the DOM tree.
+// Capturing is also known as event trickling(or simple trickling)
+// According to W3C model, propogation is continuous event from event capturing to event bubbling.
+// Netscape suggested capture is correct way while microsoft suggested bubbling is correct way for propagation, so both are accepted.
+
 document.querySelector('#grand-parent')
     .addEventListener('click', () => {
         console.log('Grandparent clicked');
