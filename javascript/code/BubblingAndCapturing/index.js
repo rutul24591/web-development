@@ -8,21 +8,25 @@
 // Capturing is also known as event trickling(or simple trickling)
 // According to W3C model, propogation is continuous event from event capturing to event bubbling.
 // Netscape suggested capture is correct way while microsoft suggested bubbling is correct way for propagation, so both are accepted.
+// use event.stopProp
 
 document.querySelector('#grand-parent')
-    .addEventListener('click', () => {
+    .addEventListener('click', (event) => {    
         console.log('Grandparent clicked');
+        // event.stopPropagation();
     }, true);
 
 document.querySelector('#parent')
-    .addEventListener('click', () => {
+    .addEventListener('click', (event) => {
         console.log('Parent clicked');
-    }, false);
+        // event.stopPropagation();
+    }, true);
 
 document.querySelector('#child')
-    .addEventListener('click', () => {
+    .addEventListener('click', (event) => {
         console.log('Child clicked');
-    }, false);
+        event.stopPropagation();
+    }, true);
 
 /**
  * Tests
@@ -97,4 +101,35 @@ document.querySelector('#child')
  *   Result:
  *      Grandparent clicked
  *      Parent clicked
+ * 
+ * 15. All are false, child's event is stopped propagating. Mimic child is clicked
+ *   Result: 
+ *      Child clicked
+ * 
+ * 16. All are false, parent's event is stopped propagating. Mimic child is clicked
+ *   Result: 
+ *      Child clicked
+ *      Parent clicked
+ * 
+ * 17. All are false, grandparent's event is stopped propagating. Mimic child is clicked
+ *   Result:
+ *      Child clicked
+ *      Parent clicked
+ *      Grandparent clicked
+ * 
+ * 18. All are true, child's event is stopped propagating. Mimic child is clicked
+ *   Result: 
+ *      Grandparent clicked
+ *      Parent clicked
+ *      Child clicked
+ * 
+ * 19. All are true, parent's event is stopped propagating. Mimic child is clicked
+ *   Result: 
+ *      Grandparent clicked
+ *      Parent clicked
+ * 
+ * 20. All are true, grandparent's event is stopped propagating. Mimic child is clicked
+ *   Result:
+ *      Grandparent clicked
+ *      
  */
