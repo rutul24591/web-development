@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name=""viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Bubbling and Capturing</title>
+	</head>
+    <style>
+        div{
+            min-height: 100px;
+            min-width: 100px;
+            border: 1px solid black;
+            padding: 25px;
+        }
+    </style>
+	<body>
+		<h1>Hello This is <em>Bubbling and Capturing</em> example</h1>
+        <div id="grand-parent">
+            Grandparent
+            <div id="parent">
+                Parent
+                <div id="child">Child</div>
+            </div>
+        </div>
+		<script src="./index.js"></script>
+	</body>
+</html>
