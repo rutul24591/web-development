@@ -1,4 +1,6 @@
 
+/** Try each example out by uncommenting one by one */
+/** Success sceanrio response is different for both all and allSettled */
 // 1. Success scenario
 // const p1 = new Promise((resolve, reject) => {
 //     setTimeout(() => resolve("p1 success"), 3000);
@@ -69,22 +71,22 @@
 
 // 4. p3 failure scenario
 
-const p1 = new Promise((resolve, reject) => {
-    setTimeout(() => resolve("p1 success"), 3000);
-});
+// const p1 = new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("p1 success"), 3000);
+// });
 
-const p2 = new Promise((resolve, reject) => {
-    setTimeout(() => resolve("p2 success"), 6000);
-});
+// const p2 = new Promise((resolve, reject) => {
+//     setTimeout(() => resolve("p2 success"), 6000);
+// });
 
-const p3 = new Promise((resolve, reject) => {
-    setTimeout(() => reject("p3 error"), 8000);
-});
+// const p3 = new Promise((resolve, reject) => {
+//     setTimeout(() => reject("p3 error"), 8000);
+// });
 
-Promise.all([p1, p2, p3])
-    .then((res) => {
-        console.log('Response Promise all p1 failure', res);
-    })
-    .catch((error) => {
-        console.error('Error encountered in promise all p3 failure example:', error); // promise-all.js:43 Error encountered in promise all example: p3 error
-    });
+// Promise.all([p1, p2, p3])
+//     .then((res) => {
+//         console.log('Response Promise all p1 failure', res);
+//     })
+//     .catch((error) => {
+//         console.error('Error encountered in promise all p3 failure example:', error); // promise-all.js:43 Error encountered in promise all example: p3 error
+//     });
