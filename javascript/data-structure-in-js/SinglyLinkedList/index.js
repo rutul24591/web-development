@@ -26,7 +26,30 @@ class LinkedList {
     }
 
     pop(){
+        // 2 -> 4 -> null
+        if(!this.head){
+            return "Nothing to pop";
+        }
 
+        let temp = this.head;
+        let pre = this.head;
+
+        while(temp.next){
+            pre = temp;
+            temp = temp.next;
+        }
+
+        
+        this.tail = pre;
+        pre.next = null;  // this.tail.next = null;
+        this.length--;
+
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
+
+        return temp;
     }
 
     shift(){
