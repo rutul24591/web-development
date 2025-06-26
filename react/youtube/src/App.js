@@ -7,9 +7,9 @@ import Error from "./containers/Error";
 import Body from "./containers/Body";
 import Sidebar from "./containers/Sidebar";
 import Watch from "./containers/Watch";
+import Header from "./containers/Header";
 
 import store from "./store/store";
-import Header from "./components/Header";
 
 const AppLayout = () => {
     return (
@@ -18,8 +18,8 @@ const AppLayout = () => {
                 <Header />
                 <div className="flex h-screen">
                     {/* h-screen */}
-                    <Sidebar />
-                    <Outlet />
+                    {/* <Sidebar /> */}
+                    {/* <Outlet /> */}
                 </div>
                 {/* <div className="bg-gray-100 p-6 shadow-lg mt-auto">
                 <footer className="flex flex-wrap justify-between items-center">
