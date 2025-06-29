@@ -1,33 +1,42 @@
-import Node from './Node.js';
+import Node from "./Node.js";
 
 class LinkedList {
-    constructor(value){
+    constructor(value) {
         const newNode = new Node(value);
         this.head = newNode;
         this.tail = newNode;
         this.length = 1;
     }
-    
-    getLength () {
+
+    getLength() {
         console.log(`Length of Linked List: `, this.length);
     }
 
     printList() {
         let temp = this.head;
 
-        while(temp != null){
-            console.log(temp.value + '->');
+        while (temp != null) {
+            console.log(temp.value + "->");
             temp = temp.next;
         }
 
         return this.head;
     }
 
-    push(value){
-        // 2 -> 4 -> null       7 
+    /**
+     * PUSH:
+     * 1. Create a new Node with provided value(newNode).
+     * 2. Check if LL is empty? If so point head and tail to newly created node(newNode).
+     * 3. Else make tail point to newNode
+     * 4. Point tail to newNode.
+     * 5. Reduce the length.
+     * 6. Return List.
+     */
+    push(value) {
+        // 2 -> 4 -> null       7
         const newNode = new Node(value);
 
-        if(!this.head){
+        if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
         } else {
@@ -35,30 +44,40 @@ class LinkedList {
             this.tail = newNode;
         }
 
-        this.length ++;
+        this.length++;
         return this;
     }
 
-    pop(){
+    /**
+     * POP:
+     * 1. Check if LL is not empty.
+     * 2. Initialize 2 variable to head i.e one to point last node in list(temp) and one for next to last(pre).
+     * 3. Loop through until end of list
+     * 4. Make tail point to pre
+     * 5. Make pre.next point to null.
+     * 6. reduce length.
+     * 7. Check if length now is 0, make head and tail point to null.
+     * 8. Return temp.
+     */
+    pop() {
         // 2 -> 4 -> null
-        if(!this.head){
+        if (!this.head) {
             return "Nothing to pop";
         }
 
         let temp = this.head;
         let pre = this.head;
 
-        while(temp.next){
+        while (temp.next) {
             pre = temp;
             temp = temp.next;
         }
 
-        
         this.tail = pre;
-        pre.next = null;  // this.tail.next = null;
+        pre.next = null; // this.tail.next = null;
         this.length--;
 
-        if(this.length === 0){
+        if (this.length === 0) {
             this.head = null;
             this.tail = null;
         }
@@ -66,29 +85,25 @@ class LinkedList {
         return temp;
     }
 
-    shift(){
+    shift() {
         // 2 -> 4 -> null
-        if(!this.head){
+        if (!this.head) {
             return "Nothing to return" || undefined;
         }
         let temp = this.head;
         this.head = this.head.next;
         this.length--;
-        if(this.length === 0){
+        if (this.length === 0) {
             this.tail = null;
         }
         temp.next = null;
         return temp;
     }
 
-    insert(index, value){
-
-    }
-
-    unshift(value){
+    unshift(value) {
         const newNode = new Node(value);
 
-        if(!this.head){
+        if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
         } else {
@@ -99,36 +114,53 @@ class LinkedList {
         return this;
     }
 
-    get(index){
+    get(index) {
         // 2 -> 4 -> 7 -> null      2
-        if(index < 0 || index >= this.length){
+        if (index < 0 || index >= this.length) {
             return "Index is out of bound";
         }
-        
+
         let temp = this.head;
 
-        for(let i = 0; i < index; i++){
+        for (let i = 0; i < index; i++) {
             temp = temp.next;
         }
         return temp;
     }
 
-    set(index, value){
+    set(index, value) {
         let temp = this.get(index);
 
-        if(temp){
+        if (temp) {
             temp.value = value;
             return true;
         }
         return false;
     }
 
-    remove(index){
+    insert(index, value) {
+        // 1 -> 2 -> 3          (1, 4)
+        if (index < 0 || index >= this.length) return undefined;
+        if (index === 0) return this.unshift(value);
+        if (index === this.length - 1) return this.push(value);
+
+        const newNode = new Node(value);
+        const temp = this.get(index);
+
+        temp.next = newNode;
+        newNode.next = temp;
+        this.temp = newNode;
+        this.length++;
+
+        return this.head;
+    }
+
+    remove(index) {
         // 2 -> 4 -> 7 -> null;
-        if(index === 0) return this.shift();
-        if(index === this.length - 1) return this.pop();
-        if(index < 0 || index >= this.length) {
-            return 'Index out of bound' || undefined;
+        if (index === 0) return this.shift();
+        if (index === this.length - 1) return this.pop();
+        if (index < 0 || index >= this.length) {
+            return "Index out of bound" || undefined;
         }
 
         const before = this.get(index - 1);
@@ -136,27 +168,27 @@ class LinkedList {
 
         before.next = temp.next;
         temp.next = null;
-        this.tail = before;     // Not in notes, but think it is required
+        this.tail = before; // Not in notes, but think it is required
         return temp;
     }
 
-    reverse(){
+    reverse() {
         // 2 -> 4 -> 7 -> null          7 -> 4 -> 2 -> null
         // Switch head and tail pointers
-        let temp = this.head;       // temp 2
-        this.head = this.tail;      // head 7
-        this.tail = temp;           // tail 2
+        let temp = this.head; // temp 2
+        this.head = this.tail; // head 7
+        this.tail = temp; // tail 2
 
         // Initialize 2 variables for next and prev of temp.
-        let next = temp.next;       // next 4
-        let prev = null;            // prev null
+        let next = temp.next; // next 4
+        let prev = null; // prev null
 
         // Loop over the LL till end of list
-        for(let i = 0; i < this.length; i++){
-            next = temp.next;       // Same for 1st iteration
-            temp.next = prev;       // This is why prev is needed to fill the gap
+        for (let i = 0; i < this.length; i++) {
+            next = temp.next; // Same for 1st iteration
+            temp.next = prev; // This is why prev is needed to fill the gap
             prev = temp;
-            temp = next;               
+            temp = next;
         }
     }
 }
@@ -165,8 +197,8 @@ const LL = new LinkedList(4);
 
 LL.getLength();
 
-const unshift2  = LL.unshift(2);
-const push7  = LL.push(7);
+const unshift2 = LL.unshift(2);
+const push7 = LL.push(7);
 
 const get2 = LL.get(-1);
 console.log(`GET idx 2`, get2);
