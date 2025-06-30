@@ -21,12 +21,57 @@ class DoublyLinkedList {
         }
         return this.head;
     }
+    //4 -> null      Add 2
 
-    push(value) {}
+    push(value) {
+        const newNode = new Node(value);
 
-    pop() {}
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this.head;
+    }
 
-    unshift(value) {}
+    pop() {
+        const temp = this.tail;
+
+        if (!this.head || !this.tail) {
+            return "List is empty. Nothing to pop";
+        }
+
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = this.tail.prev;
+            this.tail.next = null;
+            temp.prev = null;
+        }
+
+        this.length--;
+        return temp;
+    }
+
+    unshift(value) {
+        const newNode = new Node(value);
+
+        if (this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head.prev = newNode;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
 
     shift() {}
 
