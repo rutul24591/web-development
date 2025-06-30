@@ -73,7 +73,25 @@ class DoublyLinkedList {
         return this;
     }
 
-    shift() {}
+    shift() {
+        const temp = this.head;
+
+        if (this.length === 0 || !this.head) {
+            return "Nothing to shift" || undefined;
+        }
+
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = this.head.next;
+            this.head.prev = null;
+            temp.next = null;
+        }
+
+        this.length--;
+        return temp;
+    }
 
     insert(index, value) {}
 
