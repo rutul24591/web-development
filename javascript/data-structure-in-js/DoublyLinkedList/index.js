@@ -93,13 +93,31 @@ class DoublyLinkedList {
         return temp;
     }
 
+    get(index) {
+        if (index < 0 || index >= this.length) {
+            return "Index out of bound";
+        }
+
+        let temp = this.head;
+
+        if (index < this.length / 2) {
+            for (let i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = this.tail;
+            for (let j = this.length - 1; j > index; j--) {
+                temp = temp.prev;
+            }
+        }
+        return temp;
+    }
+
     insert(index, value) {}
 
     remove(index) {}
 
     set(index, newValue) {}
-
-    get(index) {}
 
     reverse() {}
 }
