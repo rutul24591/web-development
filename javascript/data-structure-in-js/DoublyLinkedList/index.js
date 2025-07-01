@@ -113,11 +113,19 @@ class DoublyLinkedList {
         return temp;
     }
 
+    set(index, newValue) {
+        const temp = this.get(index);
+
+        if (temp) {
+            temp.value = newValue;
+            return true;
+        }
+        return false;
+    }
+
     insert(index, value) {}
 
     remove(index) {}
-
-    set(index, newValue) {}
 
     reverse() {}
 }
