@@ -1,0 +1,74 @@
+import React from "react";
+
+import UserContext from "../utils/UserContext";
+
+class UserClass extends React.Component {
+    constructor(props) {
+        super(props); // To call parent's constructor and use this.props in constructor from where it is called
+        console.log(this.props);
+
+        // this.state = {
+        //     count: 0,
+        //     name: "Dummy",
+        //     location: "default",
+        //     bio: "xyz",
+        //     login: "dummy",
+        //     // userInfo: {
+        //     //     name: "Dummy",
+        //     //     location: "default",
+        //     //     bio: "xyz",
+        //     //     login: "dummy",
+        //     // },
+        // };
+
+        console.log("Child constructor");
+    }
+
+    componentDidMount() {
+        // Called after constructor and render
+        console.log("Child Component Did Mount");
+    }
+
+    render() {
+        // debugger; // Add this to place a debugger at this line
+        console.log("Child Render");
+
+        const { count, name, bio, location, login, avatar_url } =
+            this.props.userInfo;
+
+        return (
+            <div className="m-[15px] p-[15px] border border-solid border-gray-100 flex">
+                {/* <h1>Count : {count}</h1>
+                <button
+                    onClick={() => {
+                        //Never Update State Variables directly
+                        this.setState({
+                            count: this.state.count + 1,
+                        });
+                    }}
+                >
+                    Update Count
+                </button> */}
+
+                {/* <h2>Member </h2> */}
+                <div className="p-[15px]">
+                    <img className="w-16 h-16 m-2.5" src={avatar_url} />
+                </div>
+                <div className="user-details p-2.5">
+                    <h2>Name: {name}</h2>
+                    <h3>Bio: {bio ?? "Front End React developer"}</h3>
+                    <h3>Location: {location}</h3>
+                    <h4>Github: {login}</h4>
+                    <UserContext.Consumer>
+                        {({ loggedInUser }) => {
+                            console.log("loggedInUser:", loggedInUser);
+                            return <h1>{loggedInUser}</h1>;
+                        }}
+                    </UserContext.Consumer>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default UserClass;
