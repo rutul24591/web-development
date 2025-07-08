@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "This is npm react app for new version",
   "scripts": {
-    "start": "parcel DataIsNewOil/code/index.html",
-    "build": "parcel build DataIsNewOil/code/index.html",
+    "start": "parcel LetsBuildOurStore/code/index.html",
+    "build": "parcel build LetsBuildOurStore/code/index.html",
     "test": "jest"
   },
   "keywords": [
@@ -15,10 +15,12 @@
   "author": "Rutul V Amin",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
     "@tailwindcss/postcss": "^4.1.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.22.3",
     "tailwindcss": "^4.1.10"
   },
