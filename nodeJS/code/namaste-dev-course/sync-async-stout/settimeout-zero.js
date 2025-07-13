@@ -1,11 +1,21 @@
-console.log("**** SYNCHRONOUS CODE *****");
+// SetTimeout0 Demonstration
+var a = 5;
+var b = 10;
 
-var a = 234345334;
-var b = 837473;
+setTimeout(() => {
+    console.log("SetTimeout function after 3 seconds");
+}, 3000);
 
-function multiply(a, b) {
-    const result = a * b;
+//this function only will be pushed in to the callstack of
+// v8 once it becomes empty so its doesn't matter its for 0 second or more than that
+setTimeout(() => {
+    console.log("Call me asap");
+}, 0); //Trust issues with the set timeout
+
+function multiply(x, y) {
+    const result = x * y;
     return result;
 }
-var c = multiply(a, b);
-console.log("Multiplication of a and b is " + c);
+
+const c = multiply(a, b);
+console.log("Multiplication answer is : " + c);
