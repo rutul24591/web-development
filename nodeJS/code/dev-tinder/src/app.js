@@ -7,6 +7,7 @@ const connectToDB = require("./config/database");
 const authRouter = require("./routers/auth");
 const profileRouter = require("./routers/profile");
 const requestRouter = require("./routers/request");
+const userRouter = require("./routers/user");
 
 const app = express();
 const PORT = 3001;
@@ -31,6 +32,7 @@ app.use(cookieParser());
 app.use("/", authRouter);
 app.use("/", profileRouter);
 app.use("/", requestRouter);
+app.use("/", userRouter);
 
 connectToDB()
     .then(() => {
