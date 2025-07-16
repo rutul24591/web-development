@@ -62,6 +62,7 @@ const Header = () => {
                         className="hover:cursor-pointer"
                     />
                     <img
+                        fetchPriority="high"
                         onClick={() => navigate("/")}
                         className="flex mt-3 h-8 w-36 pl-4 items-center hover:cursor-pointer"
                         alt="youtube-logo"

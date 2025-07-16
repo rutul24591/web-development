@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
@@ -6,10 +6,13 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./containers/Error";
 import Body from "./containers/Body";
 import Sidebar from "./containers/Sidebar";
-import Watch from "./containers/Watch";
+// import Watch from "./containers/Watch";
 import Header from "./containers/Header";
 
 import store from "./store/store";
+import Shimmer from "./components/Shimmer";
+
+const Watch = lazy(() => import("./containers/Watch"));
 
 const AppLayout = () => {
     return (
@@ -18,8 +21,8 @@ const AppLayout = () => {
                 <Header />
                 <div className="flex h-screen">
                     {/* h-screen */}
-                    {/* <Sidebar /> */}
-                    {/* <Outlet /> */}
+                    <Sidebar />
+                    <Outlet />
                 </div>
                 {/* <div className="bg-gray-100 p-6 shadow-lg mt-auto">
                 <footer className="flex flex-wrap justify-between items-center">
@@ -55,7 +58,11 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/watch",
-                element: <Watch />,
+                element: (
+                    <Suspense fallback={<h1>Loading.......</h1>}>
+                        <Watch />
+                    </Suspense>
+                ),
                 errorElement: <Error />,
             },
         ],
