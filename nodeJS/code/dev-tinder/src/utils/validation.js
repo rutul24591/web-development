@@ -1,7 +1,7 @@
 const validator = require("validator");
 
 const validateSignUpData = async (req) => {
-    const { email, password, firstName, lastName, age } = req.body;
+    const { email, password, firstName, lastName, age = 18 } = req.body;
 
     if (!firstName || !lastName) {
         throw new Error("Please enter a valid first or last name");
@@ -9,7 +9,7 @@ const validateSignUpData = async (req) => {
         throw new Error("Please enter a valid email address");
     } else if (!validator.isStrongPassword(password)) {
         throw new Error("Please enter a strong password");
-    } else if (validator.isLength(age.toString(), { min: 18 })) {
+    } else if (validator.isLength(age?.toString(), { min: 18 })) {
         throw new Error("You need to be at least 18 to sign up");
     }
 };

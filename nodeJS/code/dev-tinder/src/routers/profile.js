@@ -1,4 +1,6 @@
 const express = require("express");
+const validator = require("validator");
+const bcrypt = require("bcrypt");
 
 const userAuth = require("../middlewares/auth");
 const { validateProfileEditData } = require("../utils/validation");
@@ -16,7 +18,7 @@ profileRouter.get("/profile/view", userAuth, async (req, res) => {
     }
 });
 
-profileRouter.patch("/profile/edit", userAuth, async (req, res) => {
+profileRouter.put("/profile/edit", userAuth, async (req, res) => {
     try {
         if (!validateProfileEditData(req)) {
             throw new Error("Invalid Edit fields requested");
@@ -49,7 +51,7 @@ profileRouter.patch("/profile/edit", userAuth, async (req, res) => {
 });
 
 // Validate once
-profileRouter.patch("/profile/forgot-password", userAuth, async (req, res) => {
+profileRouter.put("/profile/forgot-password", userAuth, async (req, res) => {
     try {
         const { oldPassword, newPassword } = req.body;
         const user = req.user;
@@ -75,8 +77,7 @@ profileRouter.patch("/profile/forgot-password", userAuth, async (req, res) => {
 
         res.json({
             statusCode: 200,
-            message: `${loggedInUser.firstName}, profile password is updated successfully`,
-            data: loggedInUser,
+            message: `${user.firstName}, profile password is updated successfully`,
         });
     } catch (error) {
         res.status(400).json({

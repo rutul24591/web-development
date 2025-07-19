@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
-
+const cors = require("cors");
 const connectToDB = require("./config/database");
 
 const authRouter = require("./routers/auth");
@@ -16,6 +16,15 @@ const PORT = 3001;
 //     res.send("Hello from express server");
 // });
 
+// Cookies wont get set in local. In prod it will.
+// To make cookies set in local, whitelist the UI url here. Also with all axios call pass withCredentials: true
+app.use(
+    cors({
+        origin: "http://localhost:5173",
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    })
+);
 /**
  * Without this middleware you won't be able to read the req data(comes in stream)
  * This is a built-in middleware function in Express.js (available from version 4.16.0 onwards)

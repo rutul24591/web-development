@@ -13,7 +13,10 @@ authRouter.post("/login", async (req, res) => {
 
         const user = await User.findOne({ email: email });
         if (!user) {
-            throw new Error("Invalid credentials");
+            // throw new Error("Invalid credentials");
+            res.status(401).json({
+                message: "Invalid Credentials",
+            });
         }
         const isPasswordValid = await user.validatePassword(password);
 
@@ -23,9 +26,14 @@ authRouter.post("/login", async (req, res) => {
             // Can chain it as well
             res.cookie("token", token, {
                 expires: new Date(Date.now() + 1 * 3600000),
-            }).send("Login Successful!!!");
+            }).json({
+                message: "Login Successful!!!",
+                data: user,
+            });
         } else {
-            throw new Error("Invalid credentials");
+            res.status(401).json({
+                message: "Invalid Credentials",
+            });
         }
     } catch (error) {
         res.status(400).send("ERROR : " + error.message);
@@ -37,7 +45,8 @@ authRouter.post("/register", async (req, res) => {
         //Validate body received
         await validateSignUpData(req);
 
-        const { firstName, lastName, email, password, age, skills } = req.body;
+        const { firstName, lastName, email, password, age, skills, gender } =
+            req.body;
 
         // Encrypt the password
         const passwordHash = await bcrypt.hash(password, 10);
@@ -48,15 +57,24 @@ authRouter.post("/register", async (req, res) => {
             firstName,
             lastName,
             email,
+            gender: gender ?? "male",
             password: passwordHash,
-            age,
-            skills,
+            age: age ? age : 18,
+            skills: skills ? skills : [],
         });
 
-        await newUser.save();
-        res.send("Successfully added user to DB");
+        const savedUser = await newUser.save();
+        const token = await savedUser.getJwt();
+
+        // Can chain it as well
+        res.cookie("token", token, {
+            expires: new Date(Date.now() + 1 * 3600000),
+        }).json({
+            message: "Registration Successful !!",
+            data: savedUser,
+        });
     } catch (error) {
-        res.status(404).send("ERROR ENCOUNTERED" + error);
+        res.status(404).send("ERROR ENCOUNTERED " + error);
     }
 });
 
