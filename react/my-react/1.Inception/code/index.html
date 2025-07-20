@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css"></link>
+    <title>My React</title>
+</head>
+<body>
+    <!-- Create with js-->
+    <!-- <div id="root">
+        <h1>Hello World!!</h1>
+    </div> -->
+
+    <!-- Create with js-->
+     <!-- <div id="root"></div>
+     <script>
+        const heading = document.createElement('h1');
+        heading.innerHTML = 'Hello world from JS';
+
+        const root = document.getElementById('root');
+        root.appendChild(heading);
+     </script> -->
+
+     <h1>Top of Root</h1>
+    <!-- Create with react --> 
+    <div id="root">
+        <!-- Below h1 will be replaced by root.render(element) 
+        React is a library(and not a framework) and can work in small portions(section) of the application like 
+        only in header, only in footer, etc.
+        Rest of Html works as it is. 
+        -->
+        <h1> Helllllooooooo Rutul</h1> 
+    </div>
+    <h1>Below the  Root</h1>
+
+    <!-- Order of below 3 scripts matters-->
+    <!-- Injected React and ReactDOM using CDN -->
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js">
+    </script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script> -->
+
+    <!-- Move below code to new file -->
+    <!-- <script>
+        const heading = React.createElement("h1", {}, "Hello Rutul, this is React World");
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        root.render(heading);
+    </script> -->
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
