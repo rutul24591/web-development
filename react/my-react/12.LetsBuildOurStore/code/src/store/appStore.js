@@ -9,11 +9,6 @@ const appStore = configureStore({
     reducer: {
         cart: cartReducer,
     },
-    // actions: {
-    //     addItem: cartAction.addItem,
-    //     removeItem: cartAction.removeItem,
-    //     clearItems: cartAction.clearItems,
-    // },
 });
 
 export default appStore;

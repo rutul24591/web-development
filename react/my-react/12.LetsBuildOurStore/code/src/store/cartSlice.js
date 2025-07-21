@@ -18,8 +18,6 @@ const cartSlice = createSlice({
     },
 });
 
-console.log("cartSlice: ", cartSlice);
-
 export const { addItem, removeItem, clearItems } = cartSlice.actions;
 export default cartSlice.reducer;
 

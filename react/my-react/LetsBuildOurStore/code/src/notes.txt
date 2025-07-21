@@ -1,7 +1,0 @@
-1. corsproxy.io is another option to CORS plugin in chrome to bypass.
-
-Add it before actual API url of swiggy or any other. corsproxy acts a proxy, we are making a call to it and it internally
-calls swiggy's api and returns us the data.
-
-https://corsproxy.io/?https://www.swiggy.com/...
-

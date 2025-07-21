@@ -14,7 +14,7 @@ import ReactDOM from "react-dom/client";
 // Parcel transpiles before it goes to JSEngine.
 // Transpile is nothing but converting to code that browsers and react can understand.
 // Does Parcel does the transpilation? No it just manages the bundling. It gives the responsibility of transpiling to a package called BABEL.
-// Babel is a JS compoiler(transpiler), it takes JSX and converts it to React.createElement.
+// Babel is a JS compiler(transpiler), it takes JSX and converts it to React.createElement.
 // !!!
 // 1. React.createElement => ReactElement (i.e) - JS Object => HTMLElement (render)
 
@@ -43,6 +43,7 @@ const data = api?.getData() || undefined;
 const elem = <span>This is span element</span>;
 
 const Title = () => (
+    // Title is normal function only. Can be called {Title()} or <Title />
     <h1 className="heading" tabIndex="5">
         React Refresh 🧑🏽‍💻 🚀
         {elem}
@@ -81,7 +82,7 @@ const HeaderFn = () => {
 };
 
 // What is component composition ?
-// Fusing or composing two components together into one another is component composition. Another jargon
+// Fusing or composing two components together into one another (to form a more complex component) is component composition. Another jargon
 // HeaderFn is component composition(above)
 
 const HeaderFn1 = () => (
