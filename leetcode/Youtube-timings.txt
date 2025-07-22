@@ -1,0 +1,129 @@
+
+217         2:11     -  Contains Duplicate
+242         9:26     -  Valid Anagram
+1           18:32    -  Two Sum
+49          28:21    - Group Anagrams
+41:10   - Top K Frequent Elements
+51:44   - Product of array except self
+1:08:36 - Valid Sudoku
+1:27:12 - Encode and Decode Strings
+1:35:32 - Longest Consecutive Sequence
+1:59:05 - Valid Palindrome
+2:08:18 - Two Sum II - Input Array Is Sorted
+2:20:52 - 3 Sum
+2:41:03 - Container With Most Water
+2:55:39 - Trapping Rain Water
+3:22:30 - Best Time To Buy And Sell Stocks
+2:32:00 - Longest Substring Wihout Repeating Characters
+3:43:06 - Longest Repeating Character Replacement
+4:04:16 - Permutation in String
+4:17:13 - Minimum Window Substring
+4:40:19 - Sliding Window Maximum
+4:59:45 - Valid Parantheses
+5:11:39 - Min Stack
+5:20:43 - Evaluate Reverse Polish Notation
+5:30:10 - Generate Parentheses
+5:46:03 - Daily Temperatures
+6:00:00 - Car Fleet
+6:19:34 - Largest  Rectangle in Histogram
+6:37:28 - Binary Search
+6:46:33 - Search a 2D Matrix
+6:55:46 - Koko Eating Bananas
+7:11:24 - Find Minimum in Rotated Sorted Array
+7:24:11 - Search in Rotated Sorted array
+7:38:01 - Time Based Key-Value Store
+7:55:18 - Median of Two Sorted Arrays
+8:22:15 - Reverse Linked List
+8:30:13 - Merge Two Sorted Lists
+8:41:09 - Reorder List
+8:56:58 - Remove Nth Node From End of List
+9:07:25 - Copy List with Random Pointer
+9:24:13 - Add Two Numbers
+9:33:45 - Linked List Cycle
+9:45:14 - Find the Duplicate Number
+9:59:02 - LRU Cache
+10:21:54 - Merge K Sorted Lists
+10:33:39 - Reverse Nodes in k-Group
+10:50:52 - Invert binary tree
+10:58:06 - Maximum Depth of Binary tree
+11:04:22 - Diameter of Binary tree
+11:12:47 - Balanced Binary tree
+11:21:20 - Same tree
+11:28:42 - Subtree of Another tree
+11:37:01 - Lowest Common Ancestor of a Binary Search Tree
+11:47:45 - Binary Tree Level Order Traversal
+11:59:50 - Binary Tree Right Side View
+12:09:36 - Count Good Nodes in Binary tree
+12:20:27 - Validate Binary Search Tree
+12:30:33 - Kth Smallest Element in a BST
+12:38:03 - Construct Binary Tree from Preorder and Inorder Traversal
+12:53:51 - Binary Tree Maximum Path Sum
+13:10:00 - Serialize and Deserialize Binary Tree
+13:20:29 - Implement Trie (Prefix Tree)
+13:45:42 - Design Add and Search Words Data Structure
+14:01:33 - Word Search II
+14:18:34 - Kth Largest Element in a Stream
+14:30:40 - Last Stone Weight
+14:41:27 - K Closest Points to Origin
+14:50:51 - Kth Largest Element in an Array
+14:58:58 - Task Scheduler 
+15:20:21 - Design Twitter
+15:46:19 - Find Median From Data Stream
+16:15:44 - Subsets
+16:29:03 - Combination Sum
+16:49:59 - Permuations
+17:05:05 - Subsets
+17:16:06 - Combination Sum - II
+17:29:27 - Word Search
+17:44:11 - Palindrome Partitioning
+18:01:43 - Letter Combinations of Phone Number
+18:12:48 - N-Queens
+18:35:55 - Number of Islands
+18:54:55 - Clone Graph
+19:09:48 - Max Area of Island
+19:21:30 - Pacific Atlantic Water Flow
+19:43:04 - Surrounded Regions
+19:55:31 - Rotting Oranges
+20:10:23 - Walls and Gates
+20:24:53 - Course Schedule
+20:46:11 - Course Schedule II
+21:11:24 - Redundant Connection
+21:31:36 - Number of Connected Components in an Undirected Graph
+21:42:55 - Graph Valid Tree
+22:18:17 - Word Ladder
+22:34:42 - Reconstruct Itinerary
+22:51:00 - Min Cost to Collect All Points
+23:14:44 - Network Delay Time
+23:32:25 - Swim in Rising Water
+23:46:53 - Alien Dictionary
+24:30:21 - Cheapest Flights Within K Stops
+24:50:31 - Climbing Stairs
+25:00:47 - Min Cost Climbing Stairs
+25:11:14 - House Robber
+25:25:35 - House Robber II
+25:40:25 - Longest Palindrome Substring
+25:56:53 - Palindrome Substrings
+26:11:10 - Decode Ways
+26:36:16 - Coin Change
+27:07:23 - Maximum Product Subarray
+27:19:49 - Word Break
+27:43:08 - Longest Increasing Subsequence
+28:30:33 - Partition Equal Subset Sum
+28:46:28 - Unique Paths
+28:57:39 - Longest Common Subsequence
+29:14:53 - Best Time to Buy and Sell Stocks with Cooldown
+29:36:21 - Coin Change II
+29:50:15 - Target Sum
+30:11:32 - Interleaving String
+30:33:38 - Longest Increasing Path in a Matrix
+30:56:27 - Distinct Subsequences
+31:11:55 - Edit Distance
+31:28:38 - Burst Balloons
+31:55:01 - Regular Expression Matching
+32:22:42 - Maximum Subarray
+32:32:24 - Jump Game
+32:51:30 - Jump Game II
+33:07:05 - Gas Station
+33:34:22 - Merge Triplets to Form Yarget Triplet
+33:45:01 - Partition Labels
+33:55:31 - Parenthesis String
