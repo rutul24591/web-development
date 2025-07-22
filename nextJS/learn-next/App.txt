@@ -1,0 +1,55 @@
+FROM React version 18, components were splitted as following types:
+
+1. Server side components.
+2. Client side components.
+
+Server components:
+a. In next.js, all components are server components by default.
+b. They have the ability to run tasks like reading files or fetching data from a database.
+c. However they don't have the ability to use hooks or handle user interactions.
+
+Client components:
+a. To create a client component, its necessary to add "use client" at the top of the component file.
+b. Client components can't perform tasks like reading files, but they have the ability to use hooks and manage interactions(Traditional react component).
+
+
+
+** ROUTING: 
+Nextjs has a file-system based routing mechanism. URL paths that users can access in the browser are defined by files and folders in your codebase.
+
+routing conventions:
+
+All routes must be placed inside the app folder.
+Every file that corresponds to a route must be named page.js or page.tsx.
+Every folder corresponds to a path segment in the browser URL.
+
+Note: Routes are associated with a file, based on the containing folders name within the app folder.Each folder within the app folder represent the url segment.
+Eg: page.tsx in about folder maps with localhost:3000/about and page.tsx in profile folder maps with localhost:3000/profile.(Name of folder in app for both scenarios)
+
+
+If route doesnt exist, 404 page will be displayed by next itself.
+
+* Nested Routing: 
+
+Check blog folder for more info. This is simple static routing.
+ blog -> first          localhost:3000/blog/first
+      -> second         localhost:3000/blog/second
+
+
+* Dynamic Routing:
+Consider the scenario where we have products and sub page about each product details. But making folders for 1000 items seperately doesnt make any sense.
+So to overcome this, we can provide dynamic routing, by enclosing the folder name with []. Eg. products -> [productId].
+Next.js treats [] in a folder as a dynamic segment, enabling us to create dynamic routes.
+
+* Nested Dynamic routes:
+How to achieve: localhost:3000/products/1/reviews/1
+
+
+* Catch-all Segments
+How to achieve: localhost:3000/docs/feature1/concept1
+
+20 Features * 20 Concepts = 400 routes -> 400 files ( so nested dynamic route is not efficient)
+20 Features * 1 [conceptId] = 20 routes -> 20 files (Efficient. But more could be achieved)
+1 [featureId] * 1 [conceptId] = 1 route -> 1 file (Massively efficient)
+
+but how to localhost:3000/docs/feature1/concept1/example1 ?
