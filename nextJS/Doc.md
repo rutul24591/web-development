@@ -155,6 +155,18 @@ If UI is to be consistent or same then we can have page.tsx in docs folder or wh
 
 ## MULTIPLE ROOT LAYOUTS:
 
+Route Groups comes into picture.
+
+1. Route groups let us organize our project structure without affecting URL'S.
+2. Apply layouts selectively to specific parts of our application.
+
+Create a route group (auth) and move Login and Register routes inside it.
+Create a route group (marketing) and move Customer and Revenue routes inside it.
+Delete the parent layout(in src/app/ folder, important else it won't work).
+Add 2 layouts to (auth) and (marketing). Now (auth) route group doesn't require header as user is not loggedin(on footer is to be displayed) but marketing needs both header and footer. If we had only parent layout the header and footer would be shown to Register, Login , Customer, Revenue routes(all), but we do not need to display for Login and Register. In (auth) Layout, we can remove Header and keep footer.
+
+After moving things around(as above), we will get an error page.tsx doesn't have a root layout. To fix this error, make sure every page has a root layout.
+
 Check video.
 
 ### Not found page
@@ -185,7 +197,7 @@ Or Make use of Private routes.
 
 ## ROUTING METADATA:
 
-1. The metadata API in Next.js is a powerfule feature that lets us define metadata for each page.
+1. The metadata API in Next.js is a powerful feature that lets us define metadata for each page.
 2. Metadata ensures our content looks great when its shared or indexed by search engines.
 3. Two ways to handle metadata in layout.tsx or page.tsx.
 
@@ -195,7 +207,7 @@ Convensions:
 2. Metadata follows a top-down order, starting from the root level.
 3. When metadata exists in multiple places along a route, they merge together, with page metadata overriding layout metadata for matching properties.
 4. We cannot use of a metadata object and a generateMetadata() within a same component/Functions. Its either or.
-5. Will not work is use client components.
+5. Will not work in client components.(`use client` is used). Work around for suce scenario is to abstract client logic into separate component and import and call in parent component(where metadata can be configured).
 
 Title for routing metadata are of 2 types. One is string like "About me" or an object. Check the blog component and root layout
 
@@ -207,6 +219,8 @@ Title for routing metadata are of 2 types. One is string like "About me" or an o
 4.  To use import from `"next/link"`.
 
          <Link href='/blog'>Blog</Link>
+
+5.  Adding `replace` to Link will take you directly home.
 
 ## PARAMS and SEARCH PARAMS
 
