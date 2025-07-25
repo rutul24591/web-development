@@ -26,7 +26,7 @@ class DoublyLinkedList {
     push(value) {
         const newNode = new Node(value);
 
-        if (!this.head) {
+        if (!this.head || this.length === 0) {
             this.head = newNode;
             this.tail = newNode;
         } else {
@@ -39,11 +39,11 @@ class DoublyLinkedList {
     }
 
     pop() {
-        const temp = this.tail;
-
-        if (!this.head || !this.tail) {
+        if (!this.head || !this.tail || this.length === 0) {
             return "List is empty. Nothing to pop";
         }
+
+        const temp = this.tail;
 
         if (this.length === 1) {
             this.head = null;
@@ -74,11 +74,11 @@ class DoublyLinkedList {
     }
 
     shift() {
-        const temp = this.head;
-
         if (this.length === 0 || !this.head) {
             return "Nothing to shift" || undefined;
         }
+
+        const temp = this.head;
 
         if (this.length === 1) {
             this.head = null;
@@ -123,11 +123,66 @@ class DoublyLinkedList {
         return false;
     }
 
-    insert(index, value) {}
+    insert(index, value) {
+        if (index < 0 || index > this.length) {
+            return false;
+        }
 
-    remove(index) {}
+        if (index === this.length) return this.push(value);
+        if (index === 0) return this.unshift(value);
 
-    reverse() {}
+        const newNode = new Node(value);
+        // Below is correct only
+        const before = this.get(index - 1);
+        const after = before.next;
+
+        before.next = newNode;
+        newNode.prev = before;
+        newNode.next = after;
+        after.prev = newNode;
+        this.length++;
+
+        return true;
+    }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) {
+            return undefined;
+        }
+
+        if (index === this.length) return this.pop();
+        if (index === 0) return this.shift();
+
+        let temp = this.get(index);
+
+        temp.prev.next = temp.next;
+        temp.next.prev = temp.prev;
+        temp.next = null;
+        temp.prev = null;
+
+        this.length--;
+        return temp;
+    }
+
+    reverse() {
+        let current = this.head;
+        let temp = null;
+
+        while (current) {
+            // Swap prev and next pointers
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+
+            //Move to the next node(which is now prev due to swap)
+            current = current.prev;
+        }
+
+        //Update the head. Though need to verify this step
+        if (temp) {
+            this.head = temp.prev;
+        }
+    }
 }
 
 const DLL = new DoublyLinkedList(4);

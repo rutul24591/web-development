@@ -11,6 +11,11 @@ These features includes `routing`, `optimized rendering`, `data fetching`, `bund
 We don't need to install additional packages as Next provided everything we need. Advantage
 Conventions should be followed to implement the above features.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## USAGE:
 
 1. `ROUTING` - For routing in react we need to make use of third party packages, but Next.js simplifies by providing `file based routing` by creating files and `routing is automatically generated or taken care`.
@@ -20,6 +25,11 @@ Conventions should be followed to implement the above features.
 5. `STYLING` - Flexible with styling approaches and supports css modules, tailwind, etc.
 6. `OPTIMIZATION` - Out of box optimatization for images, fonts, scripts enhancing application performance.
 7. `DEV AND PROD BUILD SYSTEM` - Focus on writing code instead of dealing with configurations.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## INSTALLATION:
 
@@ -34,6 +44,11 @@ Conventions should be followed to implement the above features.
 7. Turbopack ? N
 8. Import alias(`@/*` by default) ? N
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## SERVER SIDE COMPONENTS AND CLIENT SIDE COMPONENTS:
 
 1. `By default all components in next are server side components`.
@@ -41,11 +56,21 @@ Conventions should be followed to implement the above features.
 3. Client side components cannot function like server side components and won't act and display in route.
 4. Server side components cannot make use of functions that client side component provides like using `hooks`.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## ROUTING:
 
 1. File based routing in Next.js.
 2. Define a folder called `about` and within that declare page.tsx (This convention needs to be followed).
 3. Navigate to `localhost:3000/about`. The component defined within about/page.tsx get rendered.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### CONVENTIONS:
 
@@ -54,12 +79,22 @@ Conventions should be followed to implement the above features.
 3. Each folder represents a segment of the URL path.
 4. `Routes are directly tied to the folder name of directory`.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## NESTED ROUTING:
 
 1. Define a folder called `blog` and within that declare page.tsx.
 2. Create 2 separate folders within blog folder named `first` and `second` respectively.
 3. Create page.tsx within first and second folder.
 4. Now navigate for localhost:3000/blog, localhost:3000/blog/first and localhost:3000/blog/second.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## DYNAMIC ROUTING:
 
@@ -94,10 +129,20 @@ Conventions should be followed to implement the above features.
 
 5. Now navigate to `localhost:3000/products`, `localhost:3000/products/1` and `localhost:3000/products/1000`.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## NESTED DYNAMIC ROUTE:
 
 1. Check the implementation of products -> reviews folder.
 2. Navigate to see `localhost:3000/products/1/reviews/100` to see nested dynamic route.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## CATCH ALL SEGMENTS:
 
@@ -112,6 +157,11 @@ The essential difference between [...slug] and [[...slug]] is with [[..slug]] pa
 Question: But having a page.tsx in docs should behave same right?
 If UI is to be consistent or same then we can have page.tsx in docs folder or when page UI changes based on url we keep it [[...slug]] folder.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## PRIVATE ROUTE:
 
 1. \_nameoffolder indicated private route which next won't serve. (Check \_lib folder for this)
@@ -125,12 +175,22 @@ If UI is to be consistent or same then we can have page.tsx in docs folder or wh
 3. Easier grouping.
 4. Avoiding potential naming conflict with future Next.js files naming convension.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## ROUTE GROUPS:
 
 1. Wrapping a folder name with () informs next js to tried the route group to exclude from routes url path.
 2. Name will be omitted from url path.
 3. Route groups helps us to organize our code better.
 4. Nesting is possible in route groups. Route groups can be nested within each other.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## LAYOUTS:
 
@@ -140,11 +200,21 @@ If UI is to be consistent or same then we can have page.tsx in docs folder or wh
 4. The component as in 3 should accept a children prop that will be populated with a child page during rendering.
 5. Check layout.tsx file.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## NESTED LAYOUTS:
 
 1. Layouts can be nested. It could be specific to product details page. You can define it within the [productId] folder.
 2. Check layout.tsx in products/[productId] folder.
 3. Navigate to localhost:3000/products/100 and check it out.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## ROUTE GROUPS LAYOUT:
 
@@ -152,6 +222,11 @@ If UI is to be consistent or same then we can have page.tsx in docs folder or wh
 2. Create a new folder within the (auth) called (with-layout) and add the layout.tsx with contents copied from other layout.tsx from products folder.
 3. Add the register and login folder to this with-layout folder and navigate to localhost:3000/register and localhost:3000/login to see the layout being applied with contents.
 4. localhost:3000/forgot-password won't have the changes for local layout as it falls outside the directory of (with-layout)
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## MULTIPLE ROOT LAYOUTS:
 
@@ -168,6 +243,11 @@ Add 2 layouts to (auth) and (marketing). Now (auth) route group doesn't require 
 After moving things around(as above), we will get an error page.tsx doesn't have a root layout. To fix this error, make sure every page has a root layout.
 
 Check video.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### Not found page
 
@@ -195,6 +275,11 @@ Keeping UI or components files separate in a component folder and include using
 
 Or Make use of Private routes.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## ROUTING METADATA:
 
 1. The metadata API in Next.js is a powerful feature that lets us define metadata for each page.
@@ -211,6 +296,11 @@ Convensions:
 
 Title for routing metadata are of 2 types. One is string like "About me" or an object. Check the blog component and root layout
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## LINK COMPONENT NAVIGATION:
 
 1.  Up until now we used to manipulate the url in browser to view content, but actually what about navigation in when a link is clicked(actual usage in world apps). Here comes the Link navigation.
@@ -221,6 +311,11 @@ Title for routing metadata are of 2 types. One is string like "About me" or an o
          <Link href='/blog'>Blog</Link>
 
 5.  Adding `replace` to Link will take you directly home.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## PARAMS and SEARCH PARAMS
 
@@ -257,6 +352,11 @@ In case consider a marketplace, where user places an order and post that we want
          /** We can also use redirect instead of useRouter. Check for example in products -> reviews */
          redirect('/');
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## TEMPLATES:
 
 1.  Templates are similar to layouts in that they also share same UI across multiple components/pages in our app.
@@ -278,10 +378,20 @@ Here the input element is shared between all 3 register, login, forgot-password 
 So if we type something in input box and then make a switch between the routes, the input value remains as it is.(If layout.tsx is defined)
 With template.tsx, the input box will get cleared when switch is made between the routes. (Try renaming layout.tsx to template.tsx and go to /register, type something and make a switch to /login page)
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## LOADING (loading.tsx)
 
 1. Loading provides users immediate feedback when they navigate between routes making the application feel responsive and users know they actually performed some action.
 2. Next.js keeps shared layouts interactive while the new content loads. Users can make use of menu/sidebar even when main content isn't ready yet.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## ERROR HANDLING (error.tsx)
 
@@ -292,6 +402,11 @@ With template.tsx, the input box will get cleared when switch is made between th
 5. Error.tsx isolates errors to affected segments while keeping rest of the application functional.
 6. It enables you to attempt to recover from an error without requiring a full page reload.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 #### HANDLING ERRORS IN A NESTED ROUTE:
 
     - Errors always bubbles up to find the closest error boundary.
@@ -301,6 +416,11 @@ With template.tsx, the input box will get cleared when switch is made between th
 
 Eg. Try moving the error.tsx file from reviewId folder to products folder(check difference now on UI) and again placing it back in reviewId folder(check difference on UI now).
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 #### HANDLING ERRORS IN LAYOUTS:
 
     - An error.tsx will handle errors for all of its nested segments(child).
@@ -309,6 +429,11 @@ Eg. Try moving the error.tsx file from reviewId folder to products folder(check 
     - The layout sits above the error boundary in the component tree or heirarchy(Check below heirarchy)
     - Solution is to move the error.tsx to parent of layout.tsx
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### HANDLING GLOBAL ERRORS:
 
     - If an error boundary can't catch errors in the layout.tsx file from the same segment, what about the errors in root layout. It doesn't have any parent segment. How to handle those?
@@ -316,6 +441,11 @@ Eg. Try moving the error.tsx file from reviewId folder to products folder(check 
     - This is the last line of defense when something goes catastrophically wrong at the highest level of the app.
     - Need to include HTML and body tags here in global-error.tsx, as component is replaces the root layout.
     - Works only in production mode(as in dev will throw error).
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## COMPONENT HEIRARCHY
 
@@ -330,6 +460,11 @@ Eg. Try moving the error.tsx file from reviewId folder to products folder(check 
             </ErrorBoundary>
          </Template>
       </Layout>
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## PARALLEL ROUTES
 
@@ -361,6 +496,11 @@ Eg. Try moving the error.tsx file from reviewId folder to products folder(check 
       Each slot can essentially function as a mini-application, complete with its own navigation and state management. Users can interact with each section separately, applying filters, sorting data or navigating through pages without affecting other parts.
       Eg. For notifications we can have users view archived notification instead of default one only changing the url `/complex-dashboard/archived` (archieved) or `/complex-dashboard` (default). Think of as a button/link archieved or default in notifications component.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 #### UNMATCHED ROUTE:
 
 1.  Navigation from UI
@@ -370,12 +510,22 @@ Eg. Try moving the error.tsx file from reviewId folder to products folder(check 
     This file is critical as it serves as a fallback to render content when the framework cannot retrieve a slot's active state from the current URL. Without this file, we get a 404(Page not found).
 3.  Check the default.tsx file in each users, revenue, root of complex-dashboard(for children). When on `/complex-dashboard/archived` route try refresing the page now, content within this default.tsx for each parallel route will get displayed.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 #### CONDITIONAL ROUTES
 
 1. Imagine you want to show different content based on whether a user is logged in or not.
 2. You might want to display a dashboard for authenticated users but show a login page for those who aren't authenticated.
 3. Conditional routes allow us to achieve this while maintaining completely separate code on same URL.
 4. Check the login slot implementation in complex-dashboard.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 #### INTERCEPTING ROUTES
 
@@ -392,9 +542,19 @@ Eg. Try moving the error.tsx file from reviewId folder to products folder(check 
     3. For match segments that is two level above, we make use of `(..)(..)`. Similar to `../../`. Check `folder4` (destination) example called from `folder2`(source)
     4. `(...)` to match segments from the root app directory. Check `folder5`(destination) example with in `inner-folder2`(source).
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 #### INTERCEPTING PARALLEL ROUTES
 
 Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## ROUTE HANDLERS
 
@@ -413,6 +573,11 @@ Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
 13. Nesting is possible for route handlers just like page routes.
 14. If `page router` and `route handler` are present in same folder(`page.tsx` and `route.ts`, `route.ts` take precedence).
 15. To fix point 14, move route.ts into a `api` folder.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ##### GET
 
@@ -500,6 +665,11 @@ Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
             return Response.json(deletedComment);
          }
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 #### URL QUERY PARAMETERS
 
 1.  Suppose in the comments array we want to find all comments having `first` in text of the comment.
@@ -525,6 +695,11 @@ Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
 
             return Response.json(filteredComments);
          }
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 #### HEADERS
 
@@ -559,6 +734,11 @@ Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
             return new Response('Profile API data');
          }
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ##### RESPONSE HEADERS
 
 1.  These are send back from the server to the client. They provide information about the server and the data being sent in the response.
@@ -583,6 +763,11 @@ Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
                },
             });
          }
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 #### COOKIES
 
@@ -619,6 +804,11 @@ Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
          //Option 2
          console.log(cookieStore.get('resultsPerPage'));
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 #### REDIRECTS IN ROUTE HANDLERS
 
 1.  Suppose we have an API of users which is version 1(v1) with very basic information like below
@@ -645,6 +835,11 @@ Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
 
 4.  So now all requests for endpoint `/api/v1/users/` will be redirected to `/api/v2/users`.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 #### CACHING
 
 1. Route handlers are not cached by default but you can opt inot caching when using the GET method.
@@ -652,6 +847,11 @@ Check the photo-feed folder for code or navigate to localhost:3000/photo-feed
 3. Other HTTP methods like POST, PUT or DELETE are never cached.
 4. If you're using dynamic functions like headers() and cookies(), or working with the request object in your GET method, caching won't be applied.
 5. Check time and categories folder in src/app for more info.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 #### MIDDLEWARE
 
@@ -673,7 +873,10 @@ ROUTING SUMMARY SECTIONS:
 7. Parallel and intercepting routes
 8. Route Handlers and middleware.
 
----
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## 5. RENDERING
 
@@ -681,6 +884,11 @@ ROUTING SUMMARY SECTIONS:
 2. In Next.js, tricky part to building a performant application is figuring out when and where this transformation should happen.
 3. CSR, SSR and RSCs?
 4. Follow through rendering in react first, then switch to next js rendering.(Bit complex).
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### CLIENT SIDE RENDERING
 
@@ -706,6 +914,11 @@ Flow:
             3. Every time you add a new feature to your app, that JS bundle gets bigger, making users wait even longer.
             4. This is especially frustrating for people with slower internet connections.
             5. Users can suffer from slow load times, as their browsers download, parse and execute JS before seeing any meaningful content(On screen).
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### SERVER SIDE RENDERING
 
@@ -744,6 +957,11 @@ All or nothing waterfall problem as above(1 must be done before 2 and 2 must be 
 At once, create an "all or nothing" waterfall problem that spans from the server to the client, where each issue must be resolved before moving to the next one. This becomes really inefficient when some parts of you app are slower than others, as is often the case in real world apps.
 This leads to new RSC's model(React 18 introduced suspense SSR architecture).
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## SUSPENSE SSR ARCHITECTURE
 
 Use the <Suspense></Suspense> component to unlock 2 major SSR features:
@@ -781,11 +999,21 @@ Wrap the `MainContent` with suspense. When you are doing this, you are telling r
 
 The other hurdle. Even with faster HTML delivery, we can't start hydrating until we've loaded all the JS for the main section(Problem 2 of all or nothing waterfall). If that's a big chunk of code, we're still keeping users waiting from being able to interact with the page. To mitigate this we have `CodeSplitting`.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### CODE SPLITTING
 
 1. It let's you tell your bundler,"These parts of the code aren't urgent- split them into separate scripts".
 2. Using `React.lazy()` for code splitting separates your main section's code from the core JS bundle.
 3. The browser can download React and most of your app's code independently, without getting stuck waiting for that main sections code.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 #### Selective hydration on the client
 
@@ -815,6 +1043,11 @@ The other hurdle. Even with faster HTML delivery, we can't start hydrating until
 1. Even though we're streaming JS code to the browser bit by bit, eventually users still end up downloading the entire code for the webpage. As we keep adding features to out apps, this code keeps growing. `DO USERS NEED TO DOWNLOAD SO MUCH DATA?`
 2. Right now, every React component gets hydrated on the client side, whether it needs interactivity or not. This means we're using up resources and slowing down load times and time to interactivity by hydrating components that might just be static content. `SHOULD ALL COMPONENTS BE HYDRATED, EVEN THOSE THAT DON'T NEED INTERACTIVITY ?`.
 3. Even though servers are way better at handling heavy processing, we're still making users' devices do bulk of the JS work. This can really slow things down, especially on less powerful devices. `SHOULDN'T WE BE LEVERAGING OUR SERVERS MORE ?`.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### EVOLUTION OF REACT
 
@@ -873,6 +1106,11 @@ RSC key takeaways:
 
 `App Router` in Next.js is built entirely on the RSC architecture. All the benefits we've discussed above are already built in latest version of Next.js. Understanding the evolution of React's rendering provides the foundation needed for you to grasp what we're about to explore in Next.js.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## RSC + Next.js
 
 1. Every component in a Next.js app defaults to being server component.
@@ -887,6 +1125,11 @@ RSC key takeaways:
    But on refresh it will get logged on both inspector and server as well. That is because once you reload the page, the component will get rendered once on the server once
    for user to immediately see the HTML content of the page instead a blank page and rendered again on client side during hydration.(Somewhat confusing but will get used to)
 3. In development, the `comment will be seen twice` as it uses `strict mode`. Won't be the case in production.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### RSC RENDERING LIFECYCLE
 
@@ -1043,6 +1286,11 @@ If you are building an e-commerce site, you'll probably want to keep dynamicPara
 
 If you're working with something like a blog where you have a smaller, more fixed no of pages, you can pre-render all of them and set dynamicParams to false. If someone tries to access a blog post that doesn't exists, they'll get a clean 404 error instead of waiting for a page that will never exist.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### STREAMING:
 
 1. Streaming is a strategy that allows for progressive UI rendering from the server.
@@ -1051,6 +1299,11 @@ If you're working with something like a blog where you have a smaller, more fixe
 4. It's particularly powerful for improving initial page load times and handling UI elements that depend on slower data fetches, which would normally hold up the entire route.
 5. Streaming comes built right into the `App Router` in Next.js.
 6. Check `product-reviews` folder in rendering. We have 2 components `Product` and `Reviews` with delay of 2000(2 sec) and 4000(4 sec) to mimic data fetching. Now navigate to `localhost:3000/product-reviews` with dev server running. You will find the page loads after 6-8 seconds because it is fetching everything before sending anything(This seems/is similar to Suspense). We can improve this using streaming strategy of App Router.(Make use of `<Suspense></Suspense>`).
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## SERVER AND CLIENT COMPOSITION PATTERNS:
 
@@ -1078,6 +1331,11 @@ If you're working with something like a blog where you have a smaller, more fixe
 7. `server-only` package makes sures server functions doesn't sneek into client components.
 8. Using `server-only` isn't only a good practise, it also improves security, performance and reliability. It helps enforce a separation making your application more robust and secure.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### THIRD PARTY PACKAGES
 
 1. Server components have introduced an exciting new paradigm in React, and the ecosystem is evolving to keep up.
@@ -1099,6 +1357,11 @@ If you're working with something like a blog where you have a smaller, more fixe
 
 1. Third party packages in the react ecosystem are in the transitional phase where numerous components from the npm packages haven't yet adopted the `use client` directive.
 2. Wrapping such components in our own client components will allow us to leverage the ecosystem of third-party packages while adhering to the new server components model.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### CONTEXT PROVIDERS:
 
@@ -1148,7 +1411,10 @@ If you're working with something like a blog where you have a smaller, more fixe
 8. Streaming
 9. Server and client composition patterns.
 
----
+<br/>
+<br/>
+<br/>
+<br/>
 
 # 6. DATA FETCHING IN APP ROUTER
 
@@ -1184,6 +1450,11 @@ If you're working with something like a blog where you have a smaller, more fixe
 5. `Request memoization is a React feature and thereby included in Next.js.`
 6. It let's you write data-fetching code exactly where you need it rather than having to centralize fetches and pass data down through props.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### LOADING AND ERROR STATES:
 
 1. While client components require you to manage the loading and error states with separate variables and conditional renderingm server components make this process much cleaner.
@@ -1191,10 +1462,20 @@ If you're working with something like a blog where you have a smaller, more fixe
 3. To implement a `error` state, all we need to do is define and export a react component in `error.tsx`.
 4. `error.tsx` is always for a `client component`.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### DATA FETCHING PATTERNS:
 
 1. `Sequential` - Requests in a component tree are dependent on each other. This can lead to longer loading times. Check `posts-sequential` folder where we fetch all posts and for each post, fetch author using userId property.
 2. `Parallel` - Requests in a route are eagerly initiated and will load data at the same time. This reduces the total time it takes to load data. Check `users-parallel` example.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### FETCHING DATA FROM A DATABASE
 
@@ -1214,9 +1495,19 @@ If you're working with something like a blog where you have a smaller, more fixe
     - Installs the `prisma/client` package and generates the prisma client for interactions.
       f. Now the database and tables are ready.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### DATA MUTATIONS:
 
 Check the react-form code to understand the basic way the form handling was done in React. Having states for data, onChange handlers for data, loading state, etc. But there is a better way i.e `Server Actions`.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### SERVER ACTIONS
 
@@ -1238,6 +1529,11 @@ Check the react-form code to understand the basic way the form handling was done
     4. Progressive enhancement - Forms keep working even if JS is turned off in the browser - making your apps more accessible and resilient.
 7. Check `products-db-create` and compare it with `react-form` folder. Both features adding Product and displaying a list(navigating to product-db).
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### PENDING STATES WITH useFormStatus
 
 1.  `useFormStatus()` is a React hook that gives us status information about the last form submission.
@@ -1250,6 +1546,11 @@ Check the react-form code to understand the basic way the form handling was done
     -   `method` : a string(either `get` or `post`) showing the HTTP method being used.
     -   `action`: A reference to the function that was passed to the parent <form>'s action prop.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### FORM VALIDATION WITH useActionState
 
 1. `useActionState()` is a React hook that allows us to update state based on the result of a form action. It is particularly helpful for handling form validation and error messages.
@@ -1257,6 +1558,11 @@ Check the react-form code to understand the basic way the form handling was done
 3. `useActionState()` returns 3 values, i.e `state`(current formState), `formAction`, `isPending`(Boolean, action is currently being executed or not)
 4. Check the `products-db-create` folder.
 5. What about using useActionState in server component. Next.js will not allow(Hooks are not allowed in Server Component). When we try to create a `serverAction` in a client component, Next.js will not allow it. So what is the solution?
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### SEPARATING SERVER ACTIONS:
 
@@ -1309,6 +1615,11 @@ Too many things here. Check the video 80.
     2. `It handles all the complex parts of form submission`, `navigation` and `loading states` letting us `focus on building features` rather than dealing with Messy code like `prevent default, manual state management or any of that old school form handling stuff`.
     3. `Form component` also supports `server actions`.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### DATA FETCHING AND MUTATIONS SUMMARY:
 
 1. Fetch data in client components
@@ -1321,6 +1632,11 @@ Too many things here. Check the video 80.
 8. Pass additional data to perform update and delete operations.
 9. Perform optimistic updates
 10. Form Component.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ## AUTHENTICATION
 
@@ -1344,11 +1660,21 @@ Too many things here. Check the video 80.
 7. So it pretty much work to perform above, so Next js themselves recommend to use an authentication library. Docs clearly states
    "While you can implement a custom auth solution, for increased security and simplicity, we recommend using an authentication library".
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### READ SESSION AND USER DATA:
 
 1. Two helper functions from clerk: `auth()` and `currentUser()` from `clerk/nextjs/server`. Only works on server components.
 2. On client components we can user `useAuth()` and `useUser()` hooks from `clerk/nextjs/client`.
 3. Check Dashboard folder for more info.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### USER ROLES AND PERMISSIONS
 
@@ -1362,9 +1688,19 @@ Too many things here. Check the video 80.
     4. To build basic RBAC system, we need to make sure this publicMetadata is readily available in the session token,
     5. We can quickly check user roles without having to make extra network requests every time we need this information.
 
+<br/>
+<br/>
+<br/>
+<br/>
+
 ### USER ROLE MANAGEMENT
 
 1. Check `admin/actions.ts` for more info.
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 ### DEPLOYMENT
 
