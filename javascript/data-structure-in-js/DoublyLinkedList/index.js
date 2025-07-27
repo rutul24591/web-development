@@ -35,7 +35,8 @@ class DoublyLinkedList {
             this.tail = newNode;
         }
         this.length++;
-        return this.head;
+
+        return this;
     }
 
     pop() {
@@ -69,6 +70,7 @@ class DoublyLinkedList {
             this.head.prev = newNode;
             this.head = newNode;
         }
+
         this.length++;
         return this;
     }
@@ -90,6 +92,7 @@ class DoublyLinkedList {
         }
 
         this.length--;
+
         return temp;
     }
 
@@ -110,6 +113,7 @@ class DoublyLinkedList {
                 temp = temp.prev;
             }
         }
+
         return temp;
     }
 
@@ -150,7 +154,7 @@ class DoublyLinkedList {
             return undefined;
         }
 
-        if (index === this.length) return this.pop();
+        if (index === this.length - 1) return this.pop();
         if (index === 0) return this.shift();
 
         let temp = this.get(index);
