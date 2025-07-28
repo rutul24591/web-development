@@ -132,7 +132,7 @@ class LinkedList {
         let temp = this.get(index);
 
         if (temp) {
-            temp.value = value;
+            temp?.value = value;
             return true;
         }
         return false;
@@ -140,19 +140,18 @@ class LinkedList {
 
     insert(index, value) {
         // 1 -> 2 -> 3          (1, 4)
-        if (index < 0 || index >= this.length) return undefined;
+        if (index < 0 || index > this.length) return false;
         if (index === 0) return this.unshift(value);
-        if (index === this.length - 1) return this.push(value);
+        if (index === this.length) return this.push(value);
 
         const newNode = new Node(value);
-        const temp = this.get(index);
+        const temp = this.get(index-1);
 
+        newNode.next = temp.next;
         temp.next = newNode;
-        newNode.next = temp;
-        this.temp = newNode;
         this.length++;
 
-        return this.head;
+        return true;
     }
 
     remove(index) {
@@ -169,6 +168,8 @@ class LinkedList {
         before.next = temp.next;
         temp.next = null;
         this.tail = before; // Not in notes, but think it is required
+        this.length--;
+
         return temp;
     }
 
@@ -190,6 +191,8 @@ class LinkedList {
             prev = temp;
             temp = next;
         }
+
+        return this;
     }
 }
 
