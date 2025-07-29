@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+
 import photo1 from './photos/1.jpg';
 import photo2 from './photos/2.jpg';
 import photo3 from './photos/3.jpg';
