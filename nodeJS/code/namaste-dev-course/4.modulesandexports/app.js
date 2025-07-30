@@ -11,9 +11,9 @@ require("./xyz"); // xyz.js   both works
 // const { x, calculateSum } = require("./sum");
 // const obj = require("./sum");
 
-const { calculateMultiply, calculateSum } = require("./calulate");
+const { calculateMultiply, calculateSum, x } = require("./calculate");
 
-console.log(x);
+console.log("x:", x);
 calculateSum(a, b);
 calculateMultiply(a, b);
 // obj.calculateSum(a, b); // This is also correct but older way.

@@ -6,10 +6,10 @@
 var x = "Hello";
 
 function calculateSum(a, b) {
-    console.log(a + b);
+    console.log("a+b:", a + b);
 }
 
-console.log(module.exports); // {}
+console.log("module.exports", module.exports); // {}
 //Below are all the same type of module exports
 // module.exports.x=x;
 // module.exports.calculateSum=calculateSum
@@ -20,4 +20,4 @@ module.exports = {
     calculateSum,
 };
 
-console.log(module.exports);
+console.log("module.exports 2", module.exports);

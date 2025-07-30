@@ -1,6 +1,6 @@
 function calculateMultiply(a, b) {
     const multiply = a * b;
-    console.log(multiply);
+    console.log("Multiply", multiply);
 }
 module.exports = {
     calculateMultiply: calculateMultiply,
