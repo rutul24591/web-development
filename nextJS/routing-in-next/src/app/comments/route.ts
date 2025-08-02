@@ -32,6 +32,7 @@ export async function POST(request: Request) {
 
 	comments.push(newComment);
 
+	// By default response.json would send out 200 status, but as we are creating new resource 201 is more appropriate
 	return new Response(JSON.stringify(newComment), {
 		headers: { 'Content-Type': 'application/json' },
 		status: 201,

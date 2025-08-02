@@ -8,6 +8,8 @@ export const dynamic = 'force-static';
  */
 export const revalidate = 10;
 
+// Only this doesn't work in dev, only in prod mode so build it first
 export async function GET() {
-	return Response.json({ time: new Date().toLocaleDateString() });
+	return Response.json({ time: new Date().toLocaleTimeString() });   // toLocaleDateString was there bfr so no time display
 }
+

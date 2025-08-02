@@ -4,7 +4,7 @@ import { comments } from '../data';
 export async function GET(
 	_request: Request,
 	{
-		params,
+		params, // context
 	}: {
 		params: Promise<{ id: string }>;
 	},
@@ -35,7 +35,7 @@ export async function PATCH(
 }
 
 export async function DELETE(
-	request: Request,
+	_request: Request,
 	{
 		params,
 	}: {

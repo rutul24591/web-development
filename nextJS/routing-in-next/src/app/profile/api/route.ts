@@ -32,7 +32,7 @@ export async function GET(request: NextRequest) {
 	// return new Response('Profile API data');
 
 	/** This will still go as plain/text for response headers.*/
-	return new Response('<h1>Profile API data</h1>');
+	// return new Response('<h1>Profile API data</h1>');
 
 	/** This will go as text/html and will be interpreted by browser as html and display as html tag*/
 	return new Response('<h1>Profile API data</h1>', {
