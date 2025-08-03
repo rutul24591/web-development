@@ -10,24 +10,24 @@ const radius = [3, 1, 2, 4];
 
 const area = function (radius) {
     return Math.PI * radius * radius;
-}
+};
 
 const circumference = function (radius) {
     return 2 * Math.PI * radius;
-}
+};
 
 const diameter = function (radius) {
     return 2 * radius;
-}
+};
 
-const calculate = function (radius, formula){
+/** Calculate is a higher order function */
+const calculate = function (radius, formula) {
     const output = [];
     for (let i = 0; i < radius.length; i++) {
         output.push(formula(radius[i]));
     }
     return output;
-}
-
+};
 
 // Map is also a higher order function which takes a function as an argument.
 // Our calculate function is a custom map function. Granted map will have more features than our custom map function.
@@ -36,22 +36,21 @@ const calculate = function (radius, formula){
 // console.log(radius.map(circumference));
 // console.log(radius.map(diameter));
 
-
 // This way we can add a method to the Array prototype.
 // This way we can use the calculate function on any array just like map i.e radius.calculate(area);
 // calculate is like a polyfill for map.
 
-// Array.prototype.calculate = function (formula){
-//     const output = [];
-//     for (let i = 0; i < radius.length; i++) //                   ( <--- ) It will work as we are doing radius.calculate.  Replace radius with this, it will work as well.
-//         output.push(formula(radius[i]));
-//     }
-//     return output;
-// }
+Array.prototype.myCalculate = function (formula) {
+    const output = [];
+    for (let i = 0; i < radius.length; i++) {
+        // ( <--- ) It will work as we are doing radius.calculate.  Replace radius with this, it will work as well.
+        output.push(formula(radius[i]));
+    }
+    return output;
+};
 
 // Question we are just passing area now, so in the function method what is the radius that is iterated? (Look for this <---)
-console.log(radius.calculate(area));
-
+console.log(radius.myCalculate(area));
 
 console.log(calculate(radius, area));
 console.log(calculate(radius, circumference));
