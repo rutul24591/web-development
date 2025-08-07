@@ -1,4 +1,9 @@
-/** Bubble sort */
+/** Bubble sort
+ *
+ *  TC: o(n ^ 2)
+ *  SC: O(1)    Sorting array in place
+ *
+ */
 const bubbleSort = (nums) => {
     for (let i = nums.length - 1; i > 0; i--) {
         for (let j = 0; j < i; j++) {
@@ -15,4 +20,4 @@ const bubbleSort = (nums) => {
 const arr = [3, 5, 2, 1, 89, 23, 67, 34, 9, 4];
 
 const result = bubbleSort(arr);
-console.log("result: ", result);
+console.log("Result of Bubble sort ", result);
