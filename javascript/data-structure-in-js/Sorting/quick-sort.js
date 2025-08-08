@@ -2,9 +2,13 @@
  * Works based on a pivot which is 0th index
  *
  *
- * TC:
+ * TC: O(nlogn) Best case , o(n ^ 2) for already sorted or almost sorted.
+ *    Traversing of array in pivot is n and no of times we have to do this is 3 for 8 elements(ideally 7) so it is logn      => nlogn
+ *    NOTE: For nearly sorted, make use of insertion sort which could achieve O(n).
  *
- * SC:
+ *
+ * SC: O(1)
+ *    Sorting is in place only, so no additional space required.
  *
  */
 
@@ -39,3 +43,18 @@ function pivot(array, pivotIndex = 0, endIndex = array.length - 1) {
 
     return swapIndex;
 }
+
+function quickSort(array, left = 0, right = array.length - 1) {
+    // store result from pivot in pivotIndex i.e the swapIndex returned
+    if (left < right) {
+        let pivotIndex = pivot(array, left, right);
+        quickSort(array, left, pivotIndex - 1);
+        quickSort(array, pivotIndex + 1, right);
+    }
+    return array;
+}
+
+let myArray = [4, 6, 1, 7, 3, 2, 5];
+// console.log("pivot result: ", pivot(myArray)); // 3
+
+console.log("quickSort result: ", quickSort(myArray));
