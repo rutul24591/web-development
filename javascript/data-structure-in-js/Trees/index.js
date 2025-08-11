@@ -1,4 +1,4 @@
-import Node from "./Node";
+import Node from "./Node.js";
 
 class Trees {
     constructor() {
@@ -13,7 +13,7 @@ class Trees {
             return this;
         }
 
-        const temp = this.root;
+        let temp = this.root;
 
         while (true) {
             if (newNode.value === temp.value) return undefined;
@@ -51,11 +51,11 @@ class Trees {
     }
 
     remove(value) {
-        this.root = this._removeNode(this.root, value);
+        this.root = this._removeNode(value, this.root);
     }
 
-    // Still need to work on this
-    _remove(node, value) {
+    // Still need to work on this. Ignore for now
+    _remove(value, node) {
         if (node === null) return null;
 
         if (value < node.value) {
@@ -81,4 +81,31 @@ class Trees {
             return node;
         }
     }
+
+    printTree(currentNode = this.root) {
+        return currentNode;
+    }
 }
+
+const myTree = new Trees();
+
+myTree.insert(47);
+myTree.insert(21);
+myTree.insert(29);
+myTree.insert(32);
+myTree.insert(42);
+myTree.insert(8);
+myTree.insert(12);
+myTree.insert(2);
+myTree.insert(24);
+myTree.insert(87);
+myTree.insert(54);
+myTree.insert(69);
+
+console.log(myTree.printTree());
+
+console.log(myTree.contains(32));
+
+myTree.remove(87);
+
+console.log(myTree.printTree());

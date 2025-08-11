@@ -1,4 +1,4 @@
-import Node from "./Node";
+import Node from "./Node.js";
 
 class RecusiveBST {
     constructor() {
@@ -84,4 +84,31 @@ class RecusiveBST {
     deleteNode(value) {
         this.root = this.#deleteNode(value, this.root);
     }
+
+    printTree(currentNode = this.root) {
+        return currentNode;
+    }
 }
+
+const myTree = new RecusiveBST();
+
+myTree.rInsert(47);
+myTree.rInsert(21);
+myTree.rInsert(29);
+myTree.rInsert(32);
+myTree.rInsert(42);
+myTree.rInsert(8);
+myTree.rInsert(12);
+myTree.rInsert(2);
+myTree.rInsert(24);
+myTree.rInsert(87);
+myTree.rInsert(54);
+myTree.rInsert(69);
+
+console.log(myTree.printTree());
+
+console.log(myTree.rContains(32));
+
+myTree.deleteNode(87);
+
+console.log(myTree.printTree());
