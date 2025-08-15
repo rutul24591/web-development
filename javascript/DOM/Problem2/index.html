@@ -1,0 +1,37 @@
+<!--
+2. Select multiple elements by class and change background color
+    
+    Problem:
+    Change background color of all elements with class "highlight" to yellow.
+
+    Explanation:
+    -> querySelectorAll returns a NodeList.
+    -> .forEach iterates over each element to apply styles.
+
+    Key Concepts: document.querySelectorAll, forEach, style
+
+    Real-World Use: Highlighting search results.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>getElementById Example</title>
+</head>
+
+<body>
+  <p class="highlight">Item 1</p>
+  <p class="highlight">Item 2</p>
+  <script>
+    // Select element. Notice "." or "#" is used in querySelectorAll or querySelector but not in getElementBy*
+    const items = document.querySelectorAll(".highlight");
+
+    // Changes Text content
+    items.forEach((item) => item.style.backgroundColor = "orange");
+  </script>
+</body>
+
+</html>

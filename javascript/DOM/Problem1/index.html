@@ -1,0 +1,39 @@
+<!--
+  1. Select an element by ID and change its text.
+
+  Given an HTML paragraph with id="message", change its text to "Hello, DOM" using JS.
+
+  Explanation:
+  -> getElementById returns the first element with the given ID.
+  -> .textContent updates the text inside the element.
+  
+  Key Concepts: document.getElementById, textContent
+  
+  Real-World Use: Updating headlines, status messages, or alerts dynamically.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>getElementById Example</title>
+</head>
+
+<body>
+  <p id="message">Old Text</p>
+  <script>
+    // Select element
+    const para = document.getElementById("message");
+
+    // Changes Text content
+    para.textContent = "Hello, DOM";
+
+    // const timer = setTimeout(() => {
+    //   para.textContent = "Hello, DOM";
+    // }, 3500);
+
+  </script>
+</body>
+
+</html>

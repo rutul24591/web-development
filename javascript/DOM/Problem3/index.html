@@ -1,0 +1,37 @@
+<!--
+3. Select an element by tag name and make text bold
+
+  Problem:
+    Select the first <p> tag and make its text bold.
+
+  Explanation:
+
+  -> getElementsByTagName returns an HTMLCollection (live).
+  -> Index [0] selects the first match.
+
+
+  Key Concepts: HTMLCollection, inline styles
+
+  Real-World Use: Styling specific content dynamically.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>getElementById Example</title>
+</head>
+
+<body>
+  <p>Normal text</p>
+  <script>
+    const firstPara = document.getElementsByTagName("p")[0];  // to get first p only.
+
+    // Changes text to bold
+    firstPara.style.fontWeight = "bold";
+  </script>
+</body>
+
+</html>
