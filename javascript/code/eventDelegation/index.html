@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name=""viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Event Delegation</title>
-	</head>
-    <style>
-        div{
-            min-height: 100px;
-            min-width: 100px;
-            border: 1px solid black;
-            padding: 25px;
-        }
-    </style>
-	<body>
-		<h1>Hello This is <em>Event Delegation</em> example</h1>
-        <div>
-            <ul id="category">
-                <li id="laptops">Laptops</li>
-                <li id="cameras">Cameras</li>
-                <li id="accessories">Accessories</li>
-                <li id="mobiles">Mobile Phone</li>
-            </ul>
-        </div>
 
-        <div id="form">
-            <input type="text" id="name" data-uppercase/> <!-- This data-uppercase will add an uppercase attribute to dataset in event.target  Behaviour Pattern. Handle behaviour once and attach on different element-->
-            <input type="text" id="pan" />
-            <input type="text" id="mobile" data-uppercase/>
-        </div>
-		<script src="./index.js"></script>
-	</body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+</head>
+<style>
+    div {
+        min-height: 100px;
+        min-width: 100px;
+        border: 1px solid black;
+        padding: 25px;
+    }
+</style>
+
+<body>
+    <h1>Hello This is <em>Event Delegation</em> example</h1>
+    <div>
+        <ul id="category">
+            <li id="laptops">Laptops</li>
+            <li id="cameras">Cameras</li>
+            <li id="accessories">Accessories</li>
+            <li id="mobiles">Mobile Phone</li>
+        </ul>
+    </div>
+
+    <div id="form">
+        <input type="text" id="name" data-uppercase />
+        <!-- This data-uppercase will add an uppercase attribute to dataset in event.target  Behaviour Pattern. Handle behaviour once and attach on different element-->
+        <input type="text" id="pan" data-uppercase />
+        <input type="text" id="mobile" />
+    </div>
+    <script src="./index.js"></script>
+</body>
+
 </html>
