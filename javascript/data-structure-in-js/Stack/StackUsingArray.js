@@ -42,7 +42,7 @@ class Stack {
     }
 
     printStack() {
-        this.stack.map((item) => console.log(item));
+        console.log(this.stack.join(" <- "));
     }
 }
 
