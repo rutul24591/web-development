@@ -1,0 +1,36 @@
+<!--
+  8. Clone a DOM element and insert it
+  
+  Problem:
+  Duplicate a paragraph and insert after it.
+
+  Explanation:
+  -> .cloneNode(true) copies the element and children.
+  -> .after() inserts after the element.
+
+  Key Concepts: Cloning, inserting
+
+  Real-World Use: Repeating UI templates.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cloneNode and after Example</title>
+</head>
+
+<body>
+  <p id="para">This is a paragraph</p>
+  <script>
+    const para = document.getElementById("para");
+    const newPara = para.cloneNode(true); // true = deep clone
+    // para.parentNode.appendChild(newPara); ✅
+    para.after(newPara);
+
+  </script>
+</body>
+
+</html>

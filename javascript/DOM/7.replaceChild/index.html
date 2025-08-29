@@ -1,0 +1,36 @@
+<!--
+7. Replace a paragraph with a heading
+
+  Problem:
+    Replace <p> with <h2> saying "Updated!".
+
+  Explanation:
+  -> replaceChild swaps one node for another.
+
+  Key Concepts: replaceChild
+
+  Real-World Use: Switching UI components without reloading.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>replaceChild Example</title>
+</head>
+
+<body>
+  <p id="replaceMe">Old paragraph</p>
+  <script>
+    const oldPara = document.getElementById("replaceMe");
+    const newHeading = document.createElement('h2');
+
+    newHeading.textContent = "Updated!";
+    oldPara.parentNode.replaceChild(newHeading, oldPara);
+
+  </script>
+</body>
+
+</html>

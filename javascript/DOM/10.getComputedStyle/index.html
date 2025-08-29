@@ -1,0 +1,31 @@
+<!--
+  10. Get computed style of an element
+
+  Problem:
+  Log the background color of a div (even if set via CSS).
+
+  Explanation:
+  -> getComputedStyle reads final applied styles.
+
+  Key Concepts: Computed styles
+
+  Real-World Use: Responsive UI checks, animations.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>getComputedStyle Example</title>
+</head>
+
+<body>
+  <div id=" styledBox" style="background-color: blue;"">Box</div>
+  <script>
+    const box = document.getElementById(" styledBox"); const styles = window.getComputedStyle(box);
+    console.log(styles.backgroundColor); </script>
+</body>
+
+</html>

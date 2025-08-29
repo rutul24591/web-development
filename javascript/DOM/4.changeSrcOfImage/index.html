@@ -1,0 +1,34 @@
+<!--
+4. Change an image’s src dynamically
+
+Problem:
+Switch an image to a new one when the page loads.
+
+Explanation:
+-> Directly set .src property to change the image.
+
+Key Concepts: DOM property access
+
+Real-World Use: Image sliders, product previews.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Change src to image Example</title>
+</head>
+
+<body>
+  <img id="myImage" src="old.jpg" width="200">
+  <script>
+    const img = document.getElementById("myImage");
+
+    // Changes text to bold
+    img.src = "new.jpg";
+  </script>
+</body>
+
+</html>

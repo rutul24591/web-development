@@ -1,0 +1,36 @@
+<!--
+5. Add a new <li> to a <ul>
+
+  Problem:
+  Append a new list item "New Item" to an existing <ul>.
+
+  Explanation:
+  -> createElement creates a new element.
+  -> appendChild adds it as the last child.
+
+  Key Concepts: createElement, appendChild
+
+  Real-World Use: Dynamic shopping cart items.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>createElement and appendChild Example</title>
+</head>
+
+<body>
+  <ul id="myList"></ul>
+  <script>
+    const ul = document.getElementById("myList");
+    const li = document.createElement('li');
+
+    li.textContent = "New Item";
+    ul.appendChild(li);
+  </script>
+</body>
+
+</html>
