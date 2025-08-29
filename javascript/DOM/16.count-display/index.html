@@ -1,0 +1,41 @@
+<!--
+  16. Button click counter
+
+  Problem:
+  Count and display how many times a button is clicked.
+
+  Explanation:
+  -> Use a variable to store count.
+  -> Update DOM on each click.
+
+  Key Concepts: State management in DOM
+
+  Real-World Use: Like counters, analytics.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>display-count Example</title>
+</head>
+
+<body>
+  <button id="countBtn">Click Me</button>
+  <p id="countDisplay">Count: 0</p>
+
+  <script>
+    let count = 0;
+    const button = document.getElementById('countBtn');
+    const countDisplay = document.getElementById('countDisplay');
+
+    button.addEventListener('click', () => {
+      count++;
+      countDisplay.textContent = `Count ${count}`;
+    });
+  </script>
+</body>
+
+</html>

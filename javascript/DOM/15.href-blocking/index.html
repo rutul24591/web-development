@@ -1,0 +1,36 @@
+<!--
+  15. Stop a link from navigating
+
+  Problem:
+  When a link is clicked, prevent navigation and log "Blocked!".
+
+  Explanation:
+  -> Preventing navigation lets you handle SPA routing or confirm before leaving.
+
+  Key Concepts: Preventing default browser behavior
+
+  Real-World Use: Custom page transitions.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>href-block Example</title>
+</head>
+
+<body>
+  <a href="https://example.com" id="myLink">Go to Example</a>
+  <script>
+    const link = document.getElementById("myLink");
+
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      console.log("Blocked!");
+    });
+  </script>
+</body>
+
+</html>

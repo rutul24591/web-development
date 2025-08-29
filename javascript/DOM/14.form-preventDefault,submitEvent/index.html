@@ -1,0 +1,44 @@
+<!--
+  14. Prevent form submission if field is empty
+
+  Problem:
+  Stop a form from submitting if the input is blank.
+  
+  Explanation:
+  -> .preventDefault() stops form submission.
+  -> .trim() removes spaces.
+
+  Key Concepts: Form validation
+
+  Real-World Use: Ensuring valid form inputs before sending.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>form-preventDefault,submitEvent Example</title>
+</head>
+
+<body>
+  <form id="myForm">
+    <input type="text" id="name" placeholder="Enter name" />
+    <button type="submit">Click Me</button>
+  </form>
+  <script>
+    const form = document.getElementById("myForm");
+    const input = document.getElementById("name");
+
+    form.addEventListener('submit', () => {
+      if (input.value.trim() === "") {
+        event.preventDefault();
+        alert("Name is Required");
+      }
+    });
+
+  </script>
+</body>
+
+</html>

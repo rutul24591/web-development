@@ -1,0 +1,44 @@
+<!--
+  17. Change text when dropdown changes
+
+  Problem:
+  When a dropdown changes, update a paragraph to show the selected value.
+
+  Explanation:
+  -> change fires when selection changes.
+  -> .value gets selected option.
+
+  Key Concepts: Form element events
+
+  Real-World Use: Filtering products, form previews.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>select-item-display Example</title>
+</head>
+
+<body>
+
+  <select id="mySelect">
+    <option>Apple</option>
+    <option>Banana</option>
+    <option>Orange</option>
+  </select>
+  <p id="output"></p>
+
+  <script>
+    const select = document.getElementById("mySelect");
+    const output = document.getElementById("output");
+
+    select.addEventListener("change", () => {
+      output.textContent = `You selected: ${select.value}`;
+    });
+  </script>
+</body>
+
+</html>

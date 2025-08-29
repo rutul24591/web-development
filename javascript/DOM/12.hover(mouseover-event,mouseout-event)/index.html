@@ -1,0 +1,40 @@
+<!--
+  12. Change a div’s color on hover
+
+  Problem:
+  Change a div’s background to green when hovered, and back to gray when the mouse leaves.
+
+  Explanation:
+  -> mouseover fires when mouse enters.
+  -> mouseout fires when mouse leaves.
+
+  Key Concepts: Hover effects via JS
+
+  Real-World Use: Image hover previews, interactive menus.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hover(mouseover, mouseout) Example</title>
+</head>
+
+<body>
+  <div id="colorBox" style="width:100px; height:100px; background:gray;"></div>
+  <script>
+    const box = document.getElementById("colorBox");
+
+    box.addEventListener('mouseover', () => {
+      box.style.backgroundColor = "yellow";
+      // box.style.cursor = "pointer";
+    });
+    box.addEventListener('mouseout', () => {
+      box.style.backgroundColor = "gray";
+    });
+  </script>
+</body>
+
+</html>

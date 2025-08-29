@@ -1,0 +1,37 @@
+<!--
+  13. Log input value when typing
+
+  Problem:
+  As the user types in a text box, log the value.
+  
+  Explanation:
+  -> input event fires on every change (including paste).
+  -> .value gets the field content.
+
+  Key Concepts: Real-time form updates
+
+  Real-World Use: Live search, chat apps.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>input value Example</title>
+</head>
+
+<body>
+  <input type="text" id="myInput" placeholder="Type something">
+  <script>
+    const input = document.getElementById("myInput");
+
+    input.addEventListener('input', () => {
+      console.log(input.value);
+    });
+
+  </script>
+</body>
+
+</html>
