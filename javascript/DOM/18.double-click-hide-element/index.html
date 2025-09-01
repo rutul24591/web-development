@@ -1,0 +1,38 @@
+<!--
+  18. Double-click to hide an element
+
+  Problem:
+  Hide a paragraph when double-clicked.
+
+  Explanation:
+
+  -> dblclick detects two clicks quickly.
+  -> .style.display = "none" hides element.
+
+  Key Concepts: Event handling
+
+  Real-World Use: Dismissing alerts or messages.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>double-click-hide-element Example</title>
+</head>
+
+<body>
+  <p id="dblPara">Double-click me to hide</p>
+
+  <script>
+    const para = document.getElementById("dblPara");
+
+    para.addEventListener("dblclick", () => {
+      para.style.display = "none";
+    });
+  </script>
+</body>
+
+</html>

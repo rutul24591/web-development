@@ -1,0 +1,34 @@
+<!--
+  23. Find the next sibling
+
+  Problem:
+  Log the next sibling of a paragraph.
+
+  Explanation:
+  -> .nextElementSibling skips text nodes and returns only elements.
+  
+  Key Concepts: Sequential navigation
+
+  Real-World Use: Moving between UI components.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nextElementSibling Example</title>
+</head>
+
+<body>
+  <p id="p1">Paragraph 1</p>
+  <p>Paragraph 2</p>
+
+  <script>
+    const p1 = document.getElementById("p1");
+    console.log(p1.nextElementSibling);
+  </script>
+</body>
+
+</html>

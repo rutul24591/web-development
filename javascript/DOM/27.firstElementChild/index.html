@@ -1,0 +1,38 @@
+<!--
+  27. Get the first child
+
+  Problem:
+  Log the first child element of a list.
+
+  Explanation:
+  -> .firstElementChild ignores text nodes and returns first element.
+
+  Key Concepts: Direct child access
+
+  Real-World Use: Quickly grabbing first item in dynamic lists.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>firstElementChild Example</title>
+</head>
+
+<body>
+  <ul id="myList">
+    <li>One</li>
+    <li>Two</li>
+  </ul>
+
+  <script>
+    const ul = document.getElementById("myList");
+
+    console.log(ul.firstElementChild);
+    // console.log(ul.children[0]); // Will yield same results as above
+  </script>
+</body>
+
+</html>

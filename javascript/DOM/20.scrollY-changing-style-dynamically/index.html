@@ -1,0 +1,43 @@
+<!--
+  20. Change header color on scroll
+
+  Problem:
+  If page is scrolled more than 100px, change header background to black.
+
+  Explanation:
+  -> scrollY measures vertical scroll.
+  -> Changing styles dynamically on scroll improves UX.
+
+  Key Concepts: Scroll events, conditional styling
+
+  Real-World Use: Sticky navigation bars.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scrollY, Changing styles dynamically Example</title>
+</head>
+
+<body>
+  <header id="mainHeader" style="height:50px; background:lightgray;">Header</header>
+  <div style="height:2000px;"></div>
+  <script>
+    const header = document.getElementById("mainHeader");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        header.style.backgroundColor = "black";
+        header.style.color = "white";
+      } else {
+        header.style.backgroundColor = "lightgray";
+        header.style.color = "black";
+      }
+    });
+  </script>
+</body>
+
+</html>

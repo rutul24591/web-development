@@ -1,0 +1,36 @@
+<!--
+  22. Get all children of an element
+
+  Problem:
+  Log all child elements of a ul.
+
+  Explanation:
+  -> .children returns only element nodes (no text nodes).
+
+  Key Concepts: Element collections
+
+  Real-World Use: Looping over items to apply changes.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>all-children-nodes Example</title>
+</head>
+
+<body>
+  <ul id="myList">
+    <li>One</li>
+    <li>Two</li>
+  </ul>
+  <script>
+    const ul = document.getElementById("myList");
+
+    console.log(ul.children);   // HTMLCollection    only element nodes (no text nodes).
+  </script>
+</body>
+
+</html>

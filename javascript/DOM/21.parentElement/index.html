@@ -1,0 +1,35 @@
+<!--
+  21. Find the parent element of a node
+
+  Problem:
+  Log the parent of a specific paragraph.
+
+  Explanation:
+  -> .parentElement gets the immediate parent node (returns null if none).
+
+  Key Concepts: Parent navigation
+
+  Real-World Use: Event delegation, moving up in DOM tree.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>parentElement Example</title>
+</head>
+
+<body>
+  <div id="container">
+    <p id="child">Child paragraph</p>
+  </div>
+
+  <script>
+    const para = document.getElementById("child");
+    console.log(para.parentElement);
+  </script>
+</body>
+
+</html>

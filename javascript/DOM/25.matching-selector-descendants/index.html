@@ -1,0 +1,39 @@
+<!--
+  25. Get all descendants matching a selector
+
+  Problem:
+  Find all <span> elements inside a div.
+
+  Explanation:
+  -> .querySelectorAll can be called on any element, not just document.
+
+  Key Concepts: Scoped queries
+
+  Real-World Use: Finding specific parts of a component.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>matching-selector-descendants Example</title>
+</head>
+
+<body>
+  <div id="content">
+    <span>First</span>
+    <span>Second</span>
+  </div>
+
+  <script>
+    const div = document.getElementById('content');
+    const spans = div.querySelectorAll('span'); // returns NodeList(2)
+    const span = div.querySelector('span'); // Selects first span only
+    console.log(spans);
+    console.log(span);
+  </script>
+</body>
+
+</html>

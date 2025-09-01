@@ -1,0 +1,34 @@
+<!--
+  19. Log pressed key
+
+  Problem:
+  When a key is pressed, log which key it was.
+
+  Explanation:
+  -> keydown fires when any key is pressed.
+  -> event.key returns the key name.
+
+  Key Concepts: Keyboard events
+
+  Real-World Use: Shortcuts, game controls.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>display-count Example</title>
+</head>
+
+<body>
+
+  <script>
+    document.addEventListener("keydown", (event) => {
+      console.log(`Key pressed: ${event.key}`);
+    });
+  </script>
+</body>
+
+</html>

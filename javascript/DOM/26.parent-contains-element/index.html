@@ -1,0 +1,36 @@
+<!--
+  26. Check if one element contains another
+
+  Problem:
+  Check if a div contains a certain paragraph.
+
+  Explanation:
+  -> .contains() returns true if the element is inside.
+
+  Key Concepts: DOM containment checks
+
+  Real-World Use: Validating drop targets, security in event handling.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>parent-contains-element Example</title>
+</head>
+
+<body>
+  <div id="box">
+    <p id="text">Hello</p>
+  </div>
+
+  <script>
+    const box = document.getElementById("box");
+    const para = document.getElementById("text");
+    console.log(box.contains(para)); // true
+  </script>
+</body>
+
+</html>

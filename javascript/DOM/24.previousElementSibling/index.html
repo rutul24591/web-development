@@ -1,0 +1,33 @@
+<!--
+  24. Find the previous sibling
+
+  Problem:
+  Log the previous sibling of a paragraph.
+
+  Explanation:
+  -> .previousElementSibling works like next sibling but in reverse.
+
+  Key Concepts: Reverse navigation
+
+  Real-World Use: Carousel controls, table row navigation.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>previousElementSibling Example</title>
+</head>
+
+<body>
+  <p>Paragraph 1</p>
+  <p id="p2">Paragraph 2</p>
+  <script>
+    const p2 = document.getElementById("p2");
+    console.log(p2.previousElementSibling);
+  </script>
+</body>
+
+</html>
