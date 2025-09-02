@@ -1,0 +1,35 @@
+<!--
+  33. Disable a button after one click
+
+  Problem:
+  Prevent double clicks on a button.
+
+  Explanation:
+  -> .disabled = true prevents further clicks.
+  -> Useful for preventing duplicate submissions.
+
+  Real-World Use: Payment processing, API calls.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>button-disabled-on-double-click Example</title>
+</head>
+
+<body>
+  <button id="submitBtn">Submit</button>
+  <script>
+    const btn = document.getElementById("submitBtn");
+
+    btn.addEventListener("click", () => {
+      btn.disabled = true;
+      btn.textContent = "Submitted";
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!--
+  30. Count the number of <p> tags in a div
+
+    Problem:
+    Log how many <p> elements exist inside a given div.
+
+  Explanation:
+  -> .length gives number of matches from querySelectorAll.
+
+  Key Concepts: Node counting
+
+  Real-World Use: Analytics, UI summaries.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Count Elements in div Example</title>
+</head>
+
+<body>
+  <div id="container">
+    <p>One</p>
+    <p>Two</p>
+  </div>
+  <script>
+    const div = document.getElementById("container");
+    const count = div.querySelectorAll("p").length;
+    console.log(count);
+  </script>
+</body>
+
+</html>

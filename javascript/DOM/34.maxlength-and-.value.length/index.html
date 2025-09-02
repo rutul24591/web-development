@@ -1,0 +1,37 @@
+<!--
+  34. Live character count for a textarea
+
+  Problem:
+  Display remaining characters as the user types.
+
+  Explanation:
+  -> maxlength sets limit.
+  -> .value.length measures typed characters.
+
+  Real-World Use: Twitter-style character limits.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>maxlength and .value.length Example</title>
+</head>
+
+<body>
+  <textarea id="myText" maxlength="50"></textarea>
+  <p id="charCount">50 characters left</p>
+  <script>
+    const textarea = document.getElementById("myText");
+    const countDisplay = document.getElementById("charCount");
+
+    textarea.addEventListener("input", () => {
+      const remaining = textarea.maxLength - textarea.value.length;
+      countDisplay.textContent = `${remaining} characters left`;
+    });
+  </script>
+</body>
+
+</html>

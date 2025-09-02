@@ -1,0 +1,41 @@
+<!--
+  31. Event delegation – handle clicks on all list items via parent <ul>
+
+  Problem:
+    Handle clicks on <li> items without adding listeners to each one.
+
+  Explanation:
+  -> Event delegation attaches one listener to a parent.
+  -> event.target gives the clicked child.
+  -> Improves performance for dynamic lists.
+
+  Real-World Use: Click handling in chat apps, tables, menus.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event delegation via event.target.tagName Example</title>
+</head>
+
+<body>
+  <ul id="myList">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+  </ul>
+  <script>
+    const list = document.getElementById("myList");
+
+    list.addEventListener("click", (event) => {
+      if (event.target.tagName === "LI") {
+        console.log(`You clicked: ${event.target.textContent}`);
+      }
+    });
+  </script>
+</body>
+
+</html>

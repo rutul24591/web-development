@@ -1,0 +1,37 @@
+<!--
+  29. Find closest ancestor matching a selector
+
+  Problem:
+  Find the closest <div> containing a paragraph.
+
+  Explanation:
+  -> .closest(selector) walks up DOM tree until it finds a match.
+
+  Key Concepts: Ancestor search
+
+  Real-World Use: Finding container elements for styling or events.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>closest-div Example</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <section>
+      <p id="myPara">Hello</p>
+    </section>
+  </div>
+
+  <script>
+    const para = document.getElementById('myPara');
+    console.log(para.closest("div"));
+  </script>
+</body>
+
+</html>

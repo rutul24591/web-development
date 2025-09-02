@@ -1,0 +1,40 @@
+<!--
+  32. Autofocus an input on button click
+
+  Problem:
+  When a button is clicked, focus on a text input.
+
+  Explanation:
+  -> .focus() moves cursor into the input.
+  -> Helps guide user attention.
+
+  Real-World Use: Search bars, form wizards.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>focus() on input Example</title>
+</head>
+
+<body>
+  <input type="text" id="myInput" placeholder="Type here">
+  <button id="focusBtn">Focus Input</button>
+  <script>
+    const input = document.getElementById("myInput");
+    const button = document.getElementById("focusBtn");
+
+    button.addEventListener('click', () => {
+      input.focus();
+    });
+
+    // document.getElementById("focusBtn").addEventListener("click", () => {
+    //   document.getElementById("myInput").focus();
+    // });
+  </script>
+</body>
+
+</html>
