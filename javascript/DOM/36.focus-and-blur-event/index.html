@@ -1,0 +1,38 @@
+<!--
+  36. Highlight input on focus
+
+  Problem:
+  When input is focused, give it a yellow background.
+
+  Explanation:
+  -> focus and blur manage highlighting.
+  -> Improves form visibility.
+
+  Real-World Use: Form field guidance.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Highlight input on focus Example</title>
+</head>
+
+<body>
+  <input type="text" id="highlightInput">
+  <script>
+    const input = document.getElementById("highlightInput");
+
+    input.addEventListener('focus', () => {
+      input.style.backgroundColor = "yellow";
+    });
+
+    input.addEventListener("blur", () => {
+      input.style.backgroundColor = "";
+    });
+  </script>
+</body>
+
+</html>

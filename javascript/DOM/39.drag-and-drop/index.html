@@ -1,0 +1,42 @@
+<!--!!!
+  39. Drag and drop an element into a container
+
+  Problem:
+  Drag a box into a drop zone.
+
+  Explanation:
+  -> dragover must preventDefault() to allow dropping.
+  -> drop moves the element.
+
+  Real-World Use: File uploads, custom UI components.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drag-and-drop Example</title>
+</head>
+
+<body>
+
+  <div id="dragBox" draggable="true" style="width:50px; height:50px; background:red;"></div>
+  <div id="dropZone" style="width:200px; height:200px; border:2px dashed black;"></div>
+  <script>
+    const box = document.getElementById("dragBox");
+    const zone = document.getElementById("dropZone");
+
+    zone.addEventListener("dragover", (event) => {
+      event.preventDefault();
+    });
+
+    zone.addEventListener("drop", () => {
+      zone.appendChild(box);
+    });
+  </script>
+
+</body>
+
+</html>

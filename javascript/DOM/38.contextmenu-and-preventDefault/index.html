@@ -1,0 +1,35 @@
+<!--
+  38. Disable right-click on a div
+
+  Problem:
+  Block context menu on a specific div.
+
+  Explanation:
+  -> contextmenu triggers on right-click.
+  -> .preventDefault() blocks menu.
+
+  Real-World Use: Protecting custom UI menus.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>contextmenu and .preventDefault Example</title>
+</head>
+
+<body>
+  <div id="noRightClick" style="width:200px; height:100px; background:lightblue;">
+    Right-click disabled here
+  </div>
+  <script>
+    document.getElementById("noRightClick").addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+      alert("Right-click disabled!");
+    });
+  </script>
+</body>
+
+</html>

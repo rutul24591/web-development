@@ -1,0 +1,36 @@
+<!--
+  40. Save form data to localStorage
+
+  Problem:
+  Save user name in browser storage.
+
+  Explanation:
+  -> localStorage.setItem saves key-value pairs permanently.
+  -> Data stays even after refresh.
+
+  Real-World Use: Auto-filling forms, saving preferences.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local storage Example</title>
+</head>
+
+<body>
+  <input type="text" id="username" placeholder="Enter name">
+  <button id="saveBtn">Save</button>
+  <script>
+    document.getElementById("saveBtn").addEventListener("click", () => {
+      const name = document.getElementById("username").value;
+      localStorage.setItem("savedName", name);
+      alert("Name saved!");
+    });
+  </script>
+
+</body>
+
+</html>

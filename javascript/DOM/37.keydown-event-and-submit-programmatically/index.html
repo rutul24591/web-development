@@ -1,0 +1,37 @@
+<!--
+  37. Submit form with Enter key
+
+  Problem:
+  When Enter is pressed in input, submit the form.
+
+  Explanation:
+  -> keydown checks for "Enter".
+  -> .submit() programmatically sends form.
+
+  Real-World Use: Quick data entry forms.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>keydown event and submit() programmatically Example</title>
+</head>
+
+<body>
+  <form id="myForm">
+    <input type="text" id="name">
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    document.getElementById("name").addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        document.getElementById("myForm").submit();
+      }
+    });
+  </script>
+</body>
+
+</html>

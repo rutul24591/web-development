@@ -1,0 +1,36 @@
+<!--
+  35. Copy text to clipboard on button click
+
+  Problem:
+  Copy the content of a paragraph to clipboard.
+
+  Explanation:
+  -> navigator.clipboard.writeText is async.
+  -> Works only in secure contexts (HTTPS).
+
+  Real-World Use: Copying coupon codes, share links.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>navigator.clipboard.writeText Example</title>
+</head>
+
+<body>
+  <p id="copyText">Copy me!</p>
+  <button id="copyBtn">Copy</button>
+  <script>
+    document.getElementById("copyBtn").addEventListener("click", () => {
+      const text = document.getElementById("copyText").textContent;
+      navigator.clipboard.writeText(text)
+        .then(() => alert("Copied!"))
+        .catch(() => alert("Failed to copy"));
+    });
+  </script>
+</body>
+
+</html>
