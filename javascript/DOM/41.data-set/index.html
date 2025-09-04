@@ -1,0 +1,39 @@
+<!-- !!!
+  41. What are data attributes and how do you use them in JavaScript?
+
+  Explanation:
+    Data attributes are custom attributes on HTML elements that start with data-. 
+    They allow you to store extra information directly on elements without affecting layout or styles.
+  
+  Pitfall: dataset automatically converts data-user-id to camelCase userId.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local storage Example</title>
+</head>
+
+<body>
+  <button id="userBtn" data-user-id="42" data-role="admin">
+    Click Me
+  </button>
+
+  <script>
+    const btn = document.getElementById("userBtn");
+
+    // Reading data attributes
+    console.log(btn.dataset.userId); // "42"
+    console.log(btn.dataset.role);   // "admin"
+
+    // Setting data attributes
+    btn.dataset.status = "active";
+    console.log(btn.dataset.status); // "active"
+  </script>
+
+</body>
+
+</html>

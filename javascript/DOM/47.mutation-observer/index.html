@@ -1,0 +1,41 @@
+<!--
+  47. How to observe DOM changes using MutationObserver
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mutation observer Example</title>
+</head>
+
+<body>
+  <ul id="list"></ul>
+  <script>
+    const target = document.getElementById("list");
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(mutation => {
+        console.log("Mutation type:", mutation.type);
+      });
+    });
+
+    observer.observe(target, {
+      childList: true, // watch for added/removed nodes
+      attributes: true, // watch for attribute changes
+      subtree: true
+    });
+
+    // Trigger change
+    setTimeout(() => {
+      const li = document.createElement("li");
+      li.textContent = "New item";
+      target.appendChild(li);
+    }, 2000);
+  </script>
+
+</body>
+
+</html>

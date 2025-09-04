@@ -1,0 +1,39 @@
+<!--
+  43. Difference between .innerHTML and using createElement() + appendChild()
+  -> .innerHTML
+      Sets or gets HTML content as a string.
+      Faster for inserting large chunks of HTML at once.
+      Risk: Can introduce XSS if user input is inserted.
+
+  -> createElement() + appendChild()
+      Creates elements programmatically.
+      Safer against XSS.
+      More control over individual elements.
+  
+      Pitfall: Mixing .innerHTML with DOM methods can remove event listeners.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>createElement() + appendChild() Example</title>
+</head>
+
+<body>
+  <script>
+    // innerHTML
+    document.body.innerHTML += '<p>Hello World</p>';
+
+    // createElement
+    const p = document.createElement("p");
+    p.textContent = "Hello World";
+    document.body.appendChild(p);
+
+  </script>
+
+</body>
+
+</html>

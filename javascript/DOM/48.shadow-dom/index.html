@@ -1,0 +1,31 @@
+<!--
+  48. What is shadow DOM and why is it used?
+
+  Explanation:
+  Shadow DOM is a scoped DOM tree inside a web component.
+  Encapsulates styles and markup so they don’t leak out or get affected by external styles.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow DOM Example</title>
+</head>
+
+<body>
+  <div id="shadowHost"></div>
+  <script>
+    const host = document.getElementById("shadowHost");
+    const shadow = host.attachShadow({ mode: "open" });
+
+    const p = document.createElement("p");
+    p.textContent = "Inside Shadow DOM";
+    shadow.appendChild(p);
+  </script>
+
+</body>
+
+</html>

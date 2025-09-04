@@ -1,0 +1,36 @@
+<!--
+  44. How to debounce an input event?
+
+  Explanation:
+  Debouncing delays execution until after a certain time has passed without new events — useful for search bars.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debounce Example</title>
+</head>
+
+<body>
+  <script>
+    function debounce(func, delay) {
+      let timer;
+      return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => func.apply(this, args), delay);
+      };
+    }
+
+    const input = document.getElementById("search");
+
+    input.addEventListener("input", debounce((e) => {
+      console.log("Searching for:", e.target.value);
+    }, 500));
+  </script>
+
+</body>
+
+</html>

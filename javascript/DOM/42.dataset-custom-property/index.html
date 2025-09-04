@@ -1,0 +1,38 @@
+<!-- !!!
+  42. How to store data in an element without affecting HTML structure?
+
+  Explanation:
+  You can store data:
+    In dataset attributes (visible in HTML).
+    In JavaScript memory using element.myCustomProperty (not visible in HTML).
+
+  When to use:
+  -> dataset for data you want to expose in HTML.
+  -> Custom JS property for temporary/private data.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dataset custom property Example</title>
+</head>
+
+<body>
+  <button id="userBtn" data-user-id="42" data-role="admin">
+    Click Me
+  </button>
+
+  <script>
+    const div = document.createElement("div");
+
+    // Invisible in HTML
+    div.customData = { id: 1, role: "guest" };
+    console.log(div.customData.role); // "guest"
+  </script>
+
+</body>
+
+</html>

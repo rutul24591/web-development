@@ -1,0 +1,33 @@
+<!--
+  46. Difference between DocumentFragment and normal DOM elements
+
+  Explanation:
+  DocumentFragment is a lightweight, invisible container for DOM nodes.
+  Not part of the live DOM tree.
+  Improves performance when adding many elements.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document Fragment Example</title>
+</head>
+
+<body>
+  <ul></ul>
+  <script>
+    const fragment = document.createDocumentFragment();
+    for (let i = 1; i <= 100; i++) {
+      const li = document.createElement("li");
+      li.textContent = `Item ${i}`;
+      fragment.appendChild(li);
+    }
+    document.querySelector("ul").appendChild(fragment);
+  </script>
+
+</body>
+
+</html>

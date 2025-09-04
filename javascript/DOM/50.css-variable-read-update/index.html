@@ -1,0 +1,28 @@
+<!--
+  50. How to read and update CSS variables (--color) from JavaScript?
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="" viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read, Update CSS variables Example</title>
+</head>
+
+<body>
+  <script>
+    // Read
+    const root = document.documentElement;
+    const color = getComputedStyle(root).getPropertyValue("--main-color");
+    console.log("Current color:", color);
+
+    // Update
+    root.style.setProperty("--main-color", "red");
+
+  </script>
+
+</body>
+
+</html>
