@@ -4,14 +4,13 @@
     SC: O(n)
 */
 
-
-
 function isPalindromeOptimal(s) {
     // Convert string to lowercase and remove non-alphanumeric characters
-    s = s.toLowerCase().replace(/[^a-z0-9]/g, '');
-    
-    let left = 0, right = s.length - 1;
-    
+    s = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+    let left = 0,
+        right = s.length - 1;
+
     while (left < right) {
         if (s[left] !== s[right]) {
             return false;
@@ -19,7 +18,7 @@ function isPalindromeOptimal(s) {
         left++;
         right--;
     }
-    
+
     return true;
 }
 
@@ -31,8 +30,8 @@ function isPalindromeOptimal(s) {
 
 function isPalindromeNormal(s) {
     // Convert string to lowercase and remove non-alphanumeric characters
-    s = s.toLowerCase().replace(/[^a-z0-9]/g, '');
-    let reversed = s.split('').reverse().join('');
+    s = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    let reversed = s.split("").reverse().join("");
 
     return s === reversed;
 }
@@ -44,12 +43,13 @@ function isPalindromeNormal(s) {
  */
 
 function isPalindromeOptimized(s) {
-    let left = 0, right = s.length - 1;
+    let left = 0,
+        right = s.length - 1;
 
     while (left < right) {
         while (left < right && !isAlphaNumeric(s[left])) left++;
         while (left < right && !isAlphaNumeric(s[right])) right--;
-        
+
         if (s[left].toLowerCase() !== s[right].toLowerCase()) {
             return false;
         }
@@ -69,7 +69,6 @@ console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
 console.log(isPalindrome("race a car")); // false
 console.log(isPalindrome(" ")); // true
 console.log(isPalindrome("0P")); // false
-
 
 console.log(isPalindromeOptimal("A man, a plan, a canal: Panama")); // true
 console.log(isPalindromeOptimal("race a car")); // false
