@@ -6,45 +6,59 @@ class Trees {
     }
 
     insert(value) {
+        // 1. Create a new node
         const newNode = new Node(value);
 
+        // 2. Check if the root is null
         if (this.root === null) {
             this.root = newNode;
             return this;
         }
 
+        // 3. Create a temporary variable to traverse the tree equal to root
         let temp = this.root;
 
+        // 4. If the root is not null, traverse the tree
         while (true) {
+            // 5. Check if the new node value is equal to the temp value
             if (newNode.value === temp.value) return undefined;
 
+            // 6. Check if the new node value is less than the temp value
             if (newNode.value < temp.value) {
+                // 7. Check if the left child is null
                 if (temp.left === null) {
                     temp.left = newNode;
                     return this;
                 }
                 temp = temp.left;
             } else {
+                // 8. Check if the right child is null
                 if (temp.right === null) {
                     temp.right = newNode;
                     return this;
                 }
+                temp = temp.right;
             }
         }
     }
 
     contains(value) {
+        // 1. Check if the root is null
         if (this.root === null) return false;
 
+        // 2. Create a temporary variable to traverse the tree equal to root
         let temp = this.root;
 
+        // 3. If the root is not null, traverse the tree
         while (temp) {
+            // 4. Check if the value is less than the temp value
             if (value < temp.value) {
                 temp = temp.left;
             } else if (value > temp.value) {
+                // 5. Check if the value is greater than the temp value
                 temp = temp.right;
             } else {
-                // Value found
+                // 6. Value found
                 return true;
             }
         }
