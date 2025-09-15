@@ -26,8 +26,9 @@
 
 // const promise = createOrder(cart);
 
-//  When JS Engine executes the above line, it will return an empty object(Promise){ data: undefined}, continue with exectuing rest of code and after few seconds
-// or whatever time it will return the actual data. {data: undefined }becomes [{...},{...}]}. Once this is done it will call below automatically
+//  When JS Engine executes the above line, it will return an empty object(Promise){ data: undefined}, continue with exectuing rest of code and
+// after few seconds or whatever time it will return the actual data.
+// {data: undefined } becomes [{...},{...}]}. Once this is done it will call below automatically
 
 // promise.then(function(orderId){
 //     proceedToPayment(orderId);
@@ -45,17 +46,17 @@ const GITHUB_API = "https://api.github.com/users/rutul24591";
 
 const users = fetch(GITHUB_API);
 
-console.log(`users:`, users); // This log will show Promise: Pending and it you expand it will show Fulfilled (Just a bug in chrome.), Why?
-// Javascript won't wait  and execute this line before response is received.
+console.log(`users:`, users); // This log will show Promise: Pending and if you expand it will show Fulfilled (Just a bug in chrome.), Why?
+// Javascript won't wait and execute this line before response is received.
 
 /**
  * 
  * Place a debugger on const users = fetch(GITHUB_API) line and move to next step of debug
  * 
  * Scope:
- *   >  Script               (down arrow)
+ *   >  Script               v
  *      GITHUB_API: "https://api.github.com/users/rutul24591",
- *      > users : Promise        (down arrow)
+ *      > users : Promise        v
  *          > [[Prototype]]: Promise
  *            [[PromiseState]]: Pending                  <-- Pending, Fulfilled
  *            [[PromiseResult]]: undefined               <-- Will store data
