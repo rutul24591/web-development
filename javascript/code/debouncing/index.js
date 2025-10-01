@@ -1,5 +1,8 @@
 // Debouncing in Javascript
-// Used for performance optimization
+// 1. Debouncing ensures that a function is only executed after a specified period
+// of inactivity following its last invocation
+// 2. Used for performance optimization
+
 let counter = 0;
 const getData = () => {
     // Calls API and gets Data;
@@ -33,7 +36,8 @@ const debounce = function (fn, delay) {
 // doSomething if the time between keystrokes is greater than 3 ms
 const betterFunction = debounce(getData, 300);
 
-// When we type in input box, the betterFunction is called with each and every keypressevent which will call the doSomething function
+// When we type in input box,
+// the betterFunction is called with each and every keypressevent which will call the doSomething function
 // which will return us a function which does some processing. In that after 300 ms the getData method is called.
 // We will have to come up with a strategy to clear this timeout or timer whenever a new function call is made. Eg
 // Suppose a new function call is made and 300ms is still not yet passed
