@@ -91,7 +91,7 @@ class About extends Component {
         // So we will have to explicitly remove events.
 
         // How to reference setInterval or setTimeout here???
-        // Bind to to this like  this.setInterval() in componentDidMount and this.clearInterval() in componentWillUnmount
+        // Bind to this like this.setInterval() in componentDidMount and this.clearInterval() in componentWillUnmount
     }
 
     render() {

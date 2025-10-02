@@ -1,4 +1,5 @@
-import constants from "../utils/constants"; // Named Import
+// is default or named import? default import
+import constants from "../utils/constants";
 
 const Header = () => {
     return (

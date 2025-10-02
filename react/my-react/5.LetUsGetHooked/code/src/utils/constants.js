@@ -4,7 +4,7 @@ const CDN_URL =
 const LOGO_URL =
     "https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png";
 
-// Named Export
+// Default Export
 export default {
     CDN_URL,
     LOGO_URL,

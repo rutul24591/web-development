@@ -9,11 +9,14 @@ import ReactDOM from "react-dom/client";
 // );
 
 // JSX is HTML like or XML like syntax, but is not HTML or HTML in react. !!!
-// Is is valid JS or pure JS? NO. JSEngine doesn't understand it. JSEngine understand Ecmascript.
-// So how does below code work? Due to Parcel(or any web bundler). It transpiles the code for browser to understand.
+// Is is valid JS or pure JS? NO. JSEngine doesn't understand it.
+// JSEngine understand Ecmascript.
+// So how does below code work? Due to Parcel(or any web bundler).
+// It transpiles the code for browser to understand.
 // Parcel transpiles before it goes to JSEngine.
 // Transpile is nothing but converting to code that browsers and react can understand.
-// Does Parcel does the transpilation? No it just manages the bundling. It gives the responsibility of transpiling to a package called BABEL.
+// Does Parcel does the transpilation? No it just manages the bundling.
+// It gives the responsibility of transpiling to a package called BABEL.
 // Babel is a JS compiler(transpiler), it takes JSX and converts it to React.createElement.
 // !!!
 // 1. React.createElement => ReactElement (i.e) - JS Object => HTMLElement (render)
@@ -23,13 +26,14 @@ import ReactDOM from "react-dom/client";
 //         |                      |
 // 2. JSX  => React.creatElement  => ReactElement (i.e) - JS Object => HTMLElement (render)
 
-// attributes provided to jSX are camelCase
+// !!! attributes provided to jSX are camelCase
 
 // Everything in a react is a component
 // 1. Class Based component -  OLD
 // 2. Function Based component - NEW
 
-// A Functional component is nothing but a normal JS function which returns some JSX/ReactElement
+// A Functional component is nothing but a normal JS function
+// which returns some JSX/ReactElement.
 
 const number = 10000;
 const api = {
@@ -82,7 +86,8 @@ const HeaderFn = () => {
 };
 
 // What is component composition ?
-// Fusing or composing two components together into one another (to form a more complex component) is component composition. Another jargon
+// Fusing or composing two components together into one another
+// (to form a more complex component) is component composition. Another jargon
 // HeaderFn is component composition(above)
 
 const HeaderFn1 = () => (

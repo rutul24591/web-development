@@ -1,3 +1,4 @@
+// is default or named export? named export
 export const Footer = () => {
     return (
         <div className="footer">

@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 
 import restaurants from "./utils/data.json";
 
-import Header from "./components/Header";
-import { Footer } from "./components/Footer";
+import Header from "./components/Header"; // is default or named import? default import
+import { Footer } from "./components/Footer"; // is default or named import? named import
 
 import Body from "./container/Body/Body";
 

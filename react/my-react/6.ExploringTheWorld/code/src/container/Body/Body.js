@@ -44,7 +44,7 @@ const Body = (props) => {
      */
 
     useEffect(() => {
-        // This callback will be called once component renders.
+        // This callback will be called once component finishes rendering.
         // Add debuggers as below and check what is rendered first.
         console.log("useEffect called"); // put debug on this line
         fetchData();
