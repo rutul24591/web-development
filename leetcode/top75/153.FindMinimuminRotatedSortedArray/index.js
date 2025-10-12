@@ -6,19 +6,19 @@
  * @param {*} nums 
  * @returns 
  */
-function findMid(nums){
+function findMin(nums) {
     let left = 0;
     let right = nums.length - 1;
 
-    while(left < right){
-        let mid = Math.floor((left+right)/2);
+    while (left < right) {
+        let mid = Math.floor((left + right) / 2);
         console.log(`mid: `, mid);
 
-        if(nums[mid] > nums[right]){
+        if (nums[mid] > nums[right]) {
             console.log(nums[mid] + ' > ' + nums[right]);
             left = mid + 1;
             console.log(`left: `, left);
-        }else{
+        } else {
             console.log(nums[mid] + ' < ' + nums[right]);
             right = mid;
             console.log(`right: `, right);
@@ -28,4 +28,4 @@ function findMid(nums){
     return nums[left];
 }
 
-console.log(`RESULT: `, findMid([4, 5, 6, 7, 0, 1, 2]));
+console.log(`RESULT: `, findMin([4, 5, 6, 7, 0, 1, 2]));

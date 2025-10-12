@@ -2,7 +2,7 @@ Array
 
 -   Two Sum - https://leetcode.com/problems/two-sum/ ✅
 -   Best Time to Buy and Sell Stock - https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
--   Contains Duplicate - https://leetcode.com/problems/contains-duplicate/
+-   Contains Duplicate - https://leetcode.com/problems/contains-duplicate/ ✅
 -   Product of Array Except Self - https://leetcode.com/problems/product-of-array-except-self/
 -   Maximum Subarray - https://leetcode.com/problems/maximum-subarray/
 -   Maximum Product Subarray - https://leetcode.com/problems/maximum-product-subarray/
@@ -15,11 +15,11 @@ Array
 
 Binary
 
--   Sum of Two Integers - https://leetcode.com/problems/sum-of-two-integers/
+-   Sum of Two Integers - https://leetcode.com/problems/sum-of-two-integers/ ✅
 -   Number of 1 Bits - https://leetcode.com/problems/number-of-1-bits/   ✅
 -   Counting Bits - https://leetcode.com/problems/counting-bits/ ✅
 -   Missing Number - https://leetcode.com/problems/missing-number/ ✅
--   Reverse Bits - https://leetcode.com/problems/reverse-bits/
+-   Reverse Bits - https://leetcode.com/problems/reverse-bits/ ✅
 
 ---
 
@@ -65,7 +65,7 @@ Interval
 Linked List
 
 -   Reverse a Linked List - https://leetcode.com/problems/reverse-linked-list/
--   Detect Cycle in a Linked List - https://leetcode.com/problems/linked-list-cycle/
+-   Detect Cycle in a Linked List - https://leetcode.com/problems/linked-list-cycle/ ✅
 -   Merge Two Sorted Lists - https://leetcode.com/problems/merge-two-sorted-lists/
 -   Merge K Sorted Lists - https://leetcode.com/problems/merge-k-sorted-lists/
 -   Remove Nth Node From End Of List - https://leetcode.com/problems/remove-nth-node-from-end-of-list/

@@ -1,14 +1,18 @@
 /**     
  *      Sorting based approach. 
- *      Time Complexity: O(n * k * log(k))
- *      Space Complexity: O(n * k)   
+ *      Time Complexity: O(n * k * log(k)) Why?
+ *         n = number of words
+ *         k = maximum length of a word
+ *      Space Complexity: O(n * k)   Why ?
+ *         We are storing all the words in the map, and in the worst case, all words are anagrams
+ *         and will be stored in the same array.
  */
 function groupAnagrams(words) {
     let anagramGroups = new Map(); // Map to store grouped anagrams
 
-    for (let word of words) {
+    for (let word of words) {   // O(n)
         // Sort the word to get the unique key
-        let sortedWord = word.split('').sort().join('');
+        let sortedWord = word.split('').sort().join('');    // O(k log k)
 
         // If key exists, push the word into corresponding array, else create a new array
         if (!anagramGroups.has(sortedWord)) {
