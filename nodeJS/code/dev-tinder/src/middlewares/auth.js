@@ -18,7 +18,7 @@ const userAuth = async (req, res, next) => {
 
         const { _id } = decodeMessage;
 
-        // user is an instance of User i.e each document is instance of `User` Model
+        // user is an instance of User i.e each document is instance of `User` Model`
         const user = await User.findById(_id);
         if (!user) {
             throw new Error("User not found");
