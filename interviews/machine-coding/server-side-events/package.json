@@ -1,0 +1,20 @@
+{
+  "name": "server-side-events",
+  "version": "1.0.0",
+  "description": "This is a server side event example",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon ./index.js"
+  },
+  "keywords": [
+    "SSE"
+  ],
+  "author": "Rutul Amin",
+  "license": "ISC",
+  "dependencies": {
+		"body-parser": "^1.20.3",
+		"express": "^4.21.2",
+		"nodemon": "^3.1.9"
+	}
+}

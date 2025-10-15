@@ -1,0 +1,17 @@
+{
+  "name": "short-polling",
+  "version": "1.0.0",
+  "description": "This is a short polling example",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "nodemon ./index.js"
+  },
+  "author": "Rutul Amin",
+  "license": "ISC",
+  "dependencies": {
+		"body-parser": "^1.20.3",
+		"express": "^4.21.2",
+		"nodemon": "^3.1.9"
+	}
+}
