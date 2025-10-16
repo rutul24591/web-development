@@ -1,34 +1,60 @@
-/**     Two pointer approach
- *      TC: O(n^2) + O(nlogn) = O(n^2)
- *      SC: O(1)
- *      Idea:: We are using two pointers to find the sum of the three numbers.
- *      We are sorting the array first to avoid duplicates.
- *      We are using a for loop to iterate through the array.
- *      We are using a while loop to find the sum of the three numbers.
- *      We are skipping duplicates using the continue statement.
- *      We are pushing the result to the result array.
- *      We are returning the result array.
+/**
+ * LeetCode 15: 3Sum - Two Pointer Approach
+ * Time Complexity: O(n^2) + O(nlogn) = O(n^2)
+ * Space Complexity: O(1) - excluding output array
+ * 
+ * Problem: Find all unique triplets in the array that sum to zero
+ * Approach: Sort array + Two pointers technique to avoid O(n^3) brute force
  */
 function threeSum(nums) {
-    nums.sort((a, b) => a - b); // Step 1: Sort the array
+    // Step 1: Sort the array to enable two-pointer technique and handle duplicates easily
+    // Sorting allows us to skip duplicates and use left/right pointers effectively
+    nums.sort((a, b) => a - b);
+
+    // Step 2: Initialize result array to store all valid triplets
     let result = [];
 
+    // Step 3: Iterate through the array, fixing the first element of each triplet
+    // We only need to iterate up to nums.length - 2 because we need at least 3 elements
     for (let i = 0; i < nums.length - 2; i++) {
-        if (i > 0 && nums[i] === nums[i - 1]) continue; // Skip duplicates for 'i'
 
+        // Step 4: Skip duplicate values for the first element to avoid duplicate triplets
+        // If current element is same as previous, skip it to ensure unique triplets
+        if (i > 0 && nums[i] === nums[i - 1]) continue;
+
+        // Step 5: Initialize two pointers for the remaining array
+        // left pointer starts right after current element i
+        // right pointer starts at the end of array
         let left = i + 1, right = nums.length - 1;
+
+        // Step 6: Use two-pointer technique to find pairs that sum with nums[i] to zero
         while (left < right) {
+            // Step 7: Calculate sum of current triplet
             let sum = nums[i] + nums[left] + nums[right];
 
+            // Step 8: Check if we found a valid triplet (sum equals zero)
             if (sum === 0) {
+                // Step 8a: Add the triplet to result array
                 result.push([nums[i], nums[left], nums[right]]);
-                while (left < right && nums[left] === nums[left + 1]) left++; // Skip duplicates for 'left'
-                while (left < right && nums[right] === nums[right - 1]) right--; // Skip duplicates for 'right'
+
+                // Step 8b: Skip duplicate values for left pointer to avoid duplicate triplets
+                while (left < right && nums[left] === nums[left + 1]) left++;
+
+                // Step 8c: Skip duplicate values for right pointer to avoid duplicate triplets
+                while (left < right && nums[right] === nums[right - 1]) right--;
+
+                // Step 8d: Move both pointers to continue searching for more triplets
                 left++;
                 right--;
-            } else if (sum < 0) {
+            }
+            // Step 9: If sum is less than zero, we need a larger sum
+            // Move left pointer right to increase the sum (array is sorted)
+            else if (sum < 0) {
                 left++;
-            } else {
+            }
+            // Step 10: If sum is greater than zero, we need a smaller sum
+            // Move right pointer left to decrease the sum (array is sorted)
+            else {
                 right--;
             }
         }
