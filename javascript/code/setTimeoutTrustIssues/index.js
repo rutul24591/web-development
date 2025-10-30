@@ -1,6 +1,6 @@
 console.log("Start of the script");
 
-setTimeout(function(){
+setTimeout(function () {
     console.log("This is a callback statement");
 }, 5000);
 
@@ -11,9 +11,7 @@ console.log("End of the script");
 let startDate = new Date().getTime();
 let endDate = startDate;
 
-while(endDate < startDate + 10000){
+while (endDate < startDate + 10000) {
     endDate = new Date().getTime();
 }
 console.log("While completed");
-
-
