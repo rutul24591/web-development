@@ -1,5 +1,6 @@
 /**
- * The forEach() method of Array instances executes a provided function once for each array element.
+ * The forEach() method of Array instances executes a provided function once 
+ * for each array element.
  *
  * Signature:
  *      forEach(callbackFn)
