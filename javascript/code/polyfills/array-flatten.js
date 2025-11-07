@@ -15,6 +15,7 @@ const result = arr.flat(3);
 
 console.log("Result: ", result);
 
+/** !!! Check random-problems -> flatten-array-polyfill as well for solving via reduce */
 Array.prototype.myFlatten = function (depth) {
     if (!Array.isArray(this)) throw new Error("Argument is not an Array");
 
