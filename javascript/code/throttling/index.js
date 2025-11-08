@@ -1,5 +1,7 @@
 // Throttling in Javascript
-// Used for performance optimization
+// 1. Throttling limits the rate at which a function can be executed,
+//    ensuring it runs at most once within a specified time interval.
+// 2. Used for performance optimization
 
 // Suppose if there is a button with an onClick event that called a function which fetches API(which might be expensive).
 // Now if user keeps on clicking one after the other, so there will be several API calls made and it will impact the performance.
