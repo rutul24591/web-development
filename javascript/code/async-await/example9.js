@@ -1,12 +1,12 @@
 const p = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Promise resolve");
+        resolve("Promise resolve p");
     }, 6000);
 });
 
 const p1 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve("Promise resolve");
+        resolve("Promise resolve p1");
     }, 12000);
 });
 
@@ -27,8 +27,8 @@ handlePromise();
 
 // Output
 
-// Hello                -> Prints immediately. After 10 seconds(not 20) everthing else is printed yes.
+// Hello                -> Prints immediately. After 12 seconds(not 24) everthing else is printed yes.
 // Hello world
 // Promise resolve
-// Hello world
-// Promise resolve
+// Hello world 2
+// Promise resolve p1

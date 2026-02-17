@@ -14,7 +14,7 @@ document.querySelector("#grand-parent").addEventListener(
         console.log("Grandparent clicked");
         // event.stopPropagation();
     },
-    true
+    true,
 );
 
 document.querySelector("#parent").addEventListener(
@@ -23,7 +23,7 @@ document.querySelector("#parent").addEventListener(
         console.log("Parent clicked");
         event.stopPropagation();
     },
-    true
+    true,
 );
 
 document.querySelector("#child").addEventListener(
@@ -32,7 +32,7 @@ document.querySelector("#child").addEventListener(
         console.log("Child clicked");
         // event.stopPropagation();
     },
-    true
+    true,
 );
 
 /**
@@ -161,14 +161,11 @@ document.querySelector("#child").addEventListener(
 graph TD
       Window 
         |
-        |
         V
     Grandparent
         |
-        |
         V
       Parent
-        |
         |
         V
       Child

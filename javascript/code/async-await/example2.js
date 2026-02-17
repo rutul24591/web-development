@@ -6,7 +6,7 @@ async function getData() {
     return p;
 }
 
-const dataPromise = getData(); // Promise {<fulfilled>: "Hello World"}
+const dataPromise = getData(); // Promise {<fulfilled>: "Promise resolved"}
 dataPromise.then((res) => {
-    console.log("RES: ", res); // Hello World
+    console.log("RES: ", res); // Promise resolved
 });
